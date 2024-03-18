@@ -37,7 +37,7 @@ class MotorNode(Node):
         self.subscription = self.create_subscription(
             String,
             'motor',
-            self.listener_callback(self)
+            self.listener_callback
         )
 
     def setup(self):
