@@ -8,7 +8,7 @@ from std_msgs.msg import String
 class MotorNode(Node):
 
     def __init__(self):
-        super.__init__('motor')
+        super().__init__('motor')
 
         # Pins that enable the motors
         self.MOTOR_A_EN = 4
@@ -71,9 +71,10 @@ def main(args=None):
     rclpy.init(args=args)
 
     motor_object = MotorNode()
-    rclpy.spin(MotorNode)
 
+    rclpy.spin(MotorNode)
     motor_object.destroy()
+    rclpy.shutdown()
 
 
 if __name__ == '__main__':
