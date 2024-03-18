@@ -15,11 +15,12 @@ setup(
     zip_safe=True,
     maintainer='lunabot',
     maintainer_email='lunabot@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Package for controlling the lunabot',
+    license='APACHE 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'motor_node = lunabot.motor_node:main'
         ],
     },
 )
