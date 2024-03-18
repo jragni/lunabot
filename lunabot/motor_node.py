@@ -50,7 +50,7 @@ class MotorNode(Node):
         GPIO.setup(self.MOTOR_A_PIN1, GPIO.OUT)
         GPIO.setup(self.MOTOR_A_PIN2, GPIO.OUT)
         GPIO.setup(self.MOTOR_B_PIN1, GPIO.OUT)
-        GPIO.setup(self.MOTOR_B_PIN1, GPIO.OUT)
+        GPIO.setup(self.MOTOR_B_PIN2, GPIO.OUT)
 
         self.motor_stop()
 
