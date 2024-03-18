@@ -64,7 +64,7 @@ class MotorNode(Node):
         self.destroy_node()
 
     def listener_callback(self, msg):
-        self.get_logger().info('Got command' + msg)
+        self.get_logger().info('Got command: "%s"' % msg.data)
 
 
 def main(args=None):
