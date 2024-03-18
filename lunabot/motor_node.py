@@ -3,7 +3,10 @@ from rclpy.node import Node
 
 import RPi.GPIO as GPIO
 from std_msgs.msg import String
+
+
 class MotorNode(Node):
+
     def __init__(self):
         super.__init__('motor')
 
@@ -33,7 +36,8 @@ class MotorNode(Node):
         # TODO: TEST subscription
         self.subscription = self.create_subscription(
             String,
-            'motor'
+            'motor',
+            self.listener_callback(self)
         )
 
     def setup(self):
