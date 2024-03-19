@@ -16,8 +16,8 @@ class MotorNode(Node):
         # Motor Pins
         self.MOTOR_A_PIN1 = 14
         self.MOTOR_A_PIN2 = 15
-        self.MOTOR_B_PIN1 = 27
-        self.MOTOR_B_PIN2 = 18
+        self.MOTOR_B_PIN1 = 18
+        self.MOTOR_B_PIN2 = 27
         self.PWM_A = 0
         self.PWM_B = 0
 
