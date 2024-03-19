@@ -59,8 +59,10 @@ class MotorNode(Node):
         self.get_logger().info('Motors enabled!')
 
     def destroy(self):
+        self.get_logger().info('stopping motor...')
         self.motor_stop()
         GPIO.cleanup()
+        self.get_logger().info('GPIO cleanup...')
         self.destroy_node()
 
     def listener_callback(self, msg):
