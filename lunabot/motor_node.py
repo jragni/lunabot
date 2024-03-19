@@ -71,6 +71,10 @@ class MotorNode(Node):
             self.motor_stop()
 
     def test_move(self):
+        self.PWM_A.start(100)
+        self.PWM_A.ChangeDutyCycle(60)
+        self.PWM_B.start(100)
+        self.PWM_B.ChangeDutyCycle(60)
         GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
         GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
         GPIO.output(self.MOTOR_B_PIN2, GPIO.HIGH)
