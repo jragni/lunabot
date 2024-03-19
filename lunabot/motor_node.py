@@ -6,7 +6,6 @@ from std_msgs.msg import String
 
 
 class MotorNode(Node):
-
     def __init__(self):
         super().__init__('motor')
 
@@ -65,7 +64,7 @@ class MotorNode(Node):
         self.destroy_node()
 
     def listener_callback(self, msg):
-        self.get_logger().info('Got command: "%s"' % msg)
+        self.get_logger().info('Got command: "%s"' % msg.data)
 
 
 def main(args=None):
