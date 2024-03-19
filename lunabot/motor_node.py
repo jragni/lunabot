@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 import RPi.GPIO as GPIO
-from std_msgs.msg import String
+from geometry_msgs.msg import Twist
 
 
 class MotorNode(Node):
@@ -21,13 +21,16 @@ class MotorNode(Node):
         self.PWM_A = 0
         self.PWM_B = 0
 
+        # Base of robot
+        self.base_robot_distance = 0.1  # cm
+
         self.setup()
 
         # TODO: TEST subscription
         self.subscription = self.create_subscription(
-            String,
+            Twist,
             'motor',
-            self.listener_callback,
+            self.motor_callback,
             10
         )
 
@@ -39,7 +42,6 @@ class MotorNode(Node):
         GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
         GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
         GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
-
 
     def setup(self):
         """Set up pins on raspberry pi"""
@@ -66,22 +68,67 @@ class MotorNode(Node):
         self.get_logger().info('GPIO cleanup...')
         self.destroy_node()
 
-    def listener_callback(self, msg):
-        self.get_logger().info('Got command: "%s"' % msg.data)
-        if (int(msg.data) == 0):
-            self.motor_stop()
-        else:
-            self.test_move(msg.data)
+    def motor_callback(self, msg):
+        """Control the pair of motors given a Twist message
 
-    def test_move(self, speed):
-        self.PWM_A.start(100)
-        self.PWM_A.ChangeDutyCycle(int(speed))
-        self.PWM_B.start(100)
-        self.PWM_B.ChangeDutyCycle(int(speed))
-        GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
-        GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
-        GPIO.output(self.MOTOR_B_PIN1, GPIO.HIGH)
-        GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
+        Args:
+        msg (Twist): linear.x and angular.z controls
+
+        NOTE:
+        """
+        linear_x = msg.linear.x
+        angular_z = msg.angular.z
+
+        self.get_logger().info(f"""
+                ==Received Twist message==
+                linear_x: {linear_x:.2f}
+                angular_z: {angular_z:.2f}
+                ==========================
+            """
+        )
+        # Going forward or backward only
+        self.motor_left(linear_x + (angular_z * self.base_robot_distance/2))
+        self.motor_right(linear_x - (angular_z * self.base_robot_distance/2))
+
+    def motor_left(self, speed: float):
+        """Control left motor.  """
+        if speed > 0:
+            GPIO.output(self.MOTOR_A_EN, GPIO.HIGH)
+            GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
+            GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
+            self.PWM_A.start(0)
+            self.PWM_A.ChangeDutyCycle(speed)
+        elif speed < 0:
+            GPIO.output(self.MOTOR_A_EN, GPIO.HIGH)
+            GPIO.output(self.MOTOR_A_PIN1, GPIO.LOW)
+            GPIO.output(self.MOTOR_A_PIN2, GPIO.HIGH)
+            self.PWM_A.start(100)
+            self.PWM_A.ChangeDutyCycle(abs(speed))
+        else:
+            GPIO.output(self.MOTOR_A_EN, GPIO.LOW)
+            GPIO.output(self.MOTOR_A_PIN1, GPIO.LOW)
+            GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
+
+    def motor_right(self, speed: int):
+        """Control right motor.  """
+        if speed > 0:
+            GPIO.output(self.MOTOR_B_EN, GPIO.HIGH)
+            GPIO.output(self.MOTOR_B_PIN1, GPIO.HIGH)
+            GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
+            self.PWM_A.start(0)
+            self.PWM_A.ChangeDutyCycle(speed)
+
+        elif speed < 0:
+            GPIO.output(self.MOTOR_B_EN, GPIO.HIGH)
+            GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
+            GPIO.output(self.MOTOR_B_PIN2, GPIO.HIGH)
+            self.PWM_A.start(100)
+            self.PWM_A.ChangeDutyCycle(abs(speed))
+
+        else:
+            GPIO.output(self.MOTOR_B_EN, GPIO.LOW)
+            GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
+            GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
 
 def main(args=None):
