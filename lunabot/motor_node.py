@@ -77,7 +77,7 @@ class MotorNode(Node):
         self.PWM_B.ChangeDutyCycle(60)
         GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
         GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
-        GPIO.output(self.MOTOR_B_PIN2, GPIO.HIGH)
+        GPIO.output(self.MOTOR_B_PIN1, GPIO.HIGH)
         GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
 
