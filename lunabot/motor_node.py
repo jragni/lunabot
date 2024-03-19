@@ -80,7 +80,7 @@ class MotorNode(Node):
         angular_z = msg.angular.z
 
         calc_motor_left = 10 * (linear_x - (angular_z * self.base_robot_d/2))
-        calc_motor_right = 10 * (linear_x - (angular_z * self.base_robot_d/2))
+        calc_motor_right = 10 * (linear_x + (angular_z * self.base_robot_d/2))
         self.get_logger().info(f"""
                 ==Received Twist message==
                 linear_x: {linear_x:.2f}
@@ -93,8 +93,8 @@ class MotorNode(Node):
         )
 
         # Going forward or backward only
-        self.motor_left(100)
-        self.motor_right(100)
+        self.motor_left(calc_motor_left)
+        self.motor_right(calc_motor_right)
 
     def motor_left(self, speed: float):
         """Control left motor.  """
