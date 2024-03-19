@@ -73,7 +73,7 @@ def main(args=None):
 
     motor_object = MotorNode()
 
-    rclpy.spin(MotorNode)
+    rclpy.spin(motor_object)
     motor_object.destroy()
     rclpy.shutdown()
 
