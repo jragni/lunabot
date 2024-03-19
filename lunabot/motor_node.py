@@ -65,6 +65,16 @@ class MotorNode(Node):
 
     def listener_callback(self, msg):
         self.get_logger().info('Got command: "%s"' % msg.data)
+        if (msg.data == "go"):
+            self.test_move()
+        else:
+            self.motor_stop()
+
+    def test_move(self):
+        GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
+        GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
+        GPIO.output(self.MOTOR_B_PIN2, GPIO.HIGH)
+        GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
 
 def main(args=None):
