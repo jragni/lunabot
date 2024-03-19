@@ -23,6 +23,14 @@ class MotorNode(Node):
 
         self.setup()
 
+        # TODO: TEST subscription
+        self.subscription = self.create_subscription(
+            String,
+            'motor',
+            self.listener_callback,
+            10
+        )
+
     def motor_stop(self):
         """Command motor to stop."""
         GPIO.output(self.MOTOR_A_EN, GPIO.LOW)
@@ -32,13 +40,6 @@ class MotorNode(Node):
         GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
         GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
-        # TODO: TEST subscription
-        self.subscription = self.create_subscription(
-            String,
-            'motor',
-            self.listener_callback,
-            10
-        )
 
     def setup(self):
         """Set up pins on raspberry pi"""
@@ -67,16 +68,16 @@ class MotorNode(Node):
 
     def listener_callback(self, msg):
         self.get_logger().info('Got command: "%s"' % msg.data)
-        if (msg.data == "go"):
-            self.test_move()
-        else:
+        if (int(msg.data) == 0):
             self.motor_stop()
+        else:
+            self.test_move(msg.data)
 
-    def test_move(self):
+    def test_move(self, speed):
         self.PWM_A.start(100)
-        self.PWM_A.ChangeDutyCycle(60)
+        self.PWM_A.ChangeDutyCycle(int(speed))
         self.PWM_B.start(100)
-        self.PWM_B.ChangeDutyCycle(60)
+        self.PWM_B.ChangeDutyCycle(int(speed))
         GPIO.output(self.MOTOR_A_PIN1, GPIO.HIGH)
         GPIO.output(self.MOTOR_A_PIN2, GPIO.LOW)
         GPIO.output(self.MOTOR_B_PIN1, GPIO.HIGH)
