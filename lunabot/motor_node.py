@@ -87,8 +87,8 @@ class MotorNode(Node):
             """
         )
         # Going forward or backward only
-        self.motor_left(linear_x + (angular_z * self.base_robot_distance/2))
-        self.motor_right(linear_x - (angular_z * self.base_robot_distance/2))
+        self.motor_left(10*(linear_x + (angular_z * self.base_robot_distance/2)))
+        self.motor_right(10*(linear_x - (angular_z * self.base_robot_distance/2)))
 
     def motor_left(self, speed: float):
         """Control left motor.  """
