@@ -115,15 +115,15 @@ class MotorNode(Node):
             GPIO.output(self.MOTOR_B_EN, GPIO.HIGH)
             GPIO.output(self.MOTOR_B_PIN1, GPIO.HIGH)
             GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
-            self.PWM_A.start(0)
-            self.PWM_A.ChangeDutyCycle(speed)
+            self.PWM_B.start(0)
+            self.PWM_B.ChangeDutyCycle(speed)
 
         elif speed < 0:
             GPIO.output(self.MOTOR_B_EN, GPIO.HIGH)
             GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
             GPIO.output(self.MOTOR_B_PIN2, GPIO.HIGH)
-            self.PWM_A.start(100)
-            self.PWM_A.ChangeDutyCycle(abs(speed))
+            self.PWM_B.start(100)
+            self.PWM_B.ChangeDutyCycle(abs(speed))
 
         else:
             GPIO.output(self.MOTOR_B_EN, GPIO.LOW)
