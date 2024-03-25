@@ -1,11 +1,20 @@
 import rclpy
 from rclpy.node import Node
+from std_msgs.msg import Int64
+from geometry_msgs.msg import Twist
 
 import RPi.GPIO as GPIO
-from geometry_msgs.msg import Twist
 
 
 class MotorNode(Node):
+    """Controls Motor
+
+    NOTES:
+        - 70 RPM (at max work cycle)
+        - Wheel Radius: 2cm
+        - max_speed ~=
+    """
+
     def __init__(self):
         super().__init__('motor')
 
@@ -21,16 +30,27 @@ class MotorNode(Node):
         self.PWM_A = 0
         self.PWM_B = 0
 
-        # Base of robot
-        self.base_robot_d = 0.1  # cm
+        # Encoder Values
+        self.left_encoder_value = 0;
+        #self.right_encoder_value = 0;
+
+        # robot characteristics
+        self.base_d = 0.165  # cm
 
         self.setup()
 
         # TODO: TEST subscription
         self.subscription = self.create_subscription(
             Twist,
-            'motor',
+            'motor_commands',
             self.motor_callback,
+            10
+        )
+
+        self.subscription = self.create_subscription(
+            Int64,
+            'left_encoder',
+            self.left_encoder_callback,
             10
         )
 
@@ -71,9 +91,6 @@ class MotorNode(Node):
     def motor_callback(self, msg):
         """Control the pair of motors given a Twist message.
 
-        Duty cycle range: 0 - 100
-        Max Speed: 0.2 m/s
-
         Args:
         msg (Twist): linear.x and angular.z controls
 
@@ -82,51 +99,24 @@ class MotorNode(Node):
         linear_x = msg.linear.x
         angular_z = msg.angular.z
 
-        calc_motor_left = 1000 * (linear_x - angular_z * self.base_robot_d/2)
-        calc_motor_right = 1000 * (linear_x + angular_z * self.base_robot_d/2)
-
-        if linear_x >= 0:
-            actual_motor_left = (
-                calc_motor_left
-                if (calc_motor_left) <= 100
-                else 100
-            )
-            actual_motor_right = (
-                calc_motor_right
-                if calc_motor_right <= 100
-                else 100
-            )
-        else:
-            actual_motor_left = (
-                calc_motor_left
-                if (calc_motor_left) >= -100
-                else -100
-            )
-            actual_motor_right = (
-                calc_motor_right
-                if calc_motor_right >= -100
-                else -100
-            )
-
         self.get_logger().info(f"""
                 ==Received Twist message==
                 linear_x: {linear_x:.2f}
                 angular_z: {angular_z:.2f}
                 -------------------------
-                calc-left: {calc_motor_left}
-                calc-right: {calc_motor_right}
+                encoder_left = {self.left_encoder_value}
                 -------------------------
-                motor-left: {actual_motor_left}
-                motor-right: {actual_motor_right}
+                motor-left: 100
+                motor-right: 100
                 ==========================
             """
         )
 
         # Going forward or backward only
-        self.motor_left(actual_motor_left)
-        self.motor_right(actual_motor_right)
+        self.motor_left(100)
+        self.motor_right(100)
 
-    def motor_left(self, speed: float):
+    def motor_left(self, speed: float) -> None:
         """Control left motor.  """
         if speed > 0:
             GPIO.output(self.MOTOR_A_EN, GPIO.HIGH)
@@ -166,6 +156,8 @@ class MotorNode(Node):
             GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
             GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
+    def left_encoder_callback(self, msg):
+        self.left_encoder_value = msg.data
 
 def main(args=None):
     rclpy.init(args=args)

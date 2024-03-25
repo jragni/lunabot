@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'motor_node = lunabot.motor_node:main'
+            'motor_node = lunabot.motor_node:main',
+            'left_encoder = lunabot.left_encoder_node:main',
         ],
     },
 )
