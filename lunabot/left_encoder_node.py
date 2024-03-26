@@ -29,14 +29,14 @@ class LeftEncoderNode(Node):
         """Read encoder value and publish to topic."""
 
         try:
-            self.encoder_value = self.ser.readline().strip().decode('ascii')
+            self.encoder_value = int(self.ser.readline().strip().decode('ascii'))
             msg = Int64()
             msg.data = self.encoder_value
 
             self.publisher_.publish(msg)
 
         except ValueError:
-            self.get_logger().warn('Left Encoder invalid reading')
+            self.get_logger().warn(f'Left Encoder invalid reading. got {self.encoder_value}')
             pass
 
 
