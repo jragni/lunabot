@@ -1,14 +1,14 @@
 import rclpy
-# from rclpy.node import Node
-from ros2_control import ControllerBase
+from rclpy.node import Node
 from std_msgs.msg import Int64
 from geometry_msgs.msg import Twist
 
 import RPi.GPIO as GPIO
 import math
+import time
 
 
-class MotorNode(ControllerBase):
+class MotorNode(Node):
     """Controls Motor
 
     NOTES:
@@ -44,6 +44,7 @@ class MotorNode(ControllerBase):
         self.base_d = 0.165  # cm
 
         # PID
+        self.current_time = time.time()
         self.Kp = 1
         self.prev_error_left = 0
 
@@ -206,9 +207,11 @@ class MotorNode(ControllerBase):
             right_setpoint
         ) = self.get_setpoints(linear_x, angular_z)
 
-        sample_time = self.get_period().nanoseconds() / 1e9
+        error_left = left_setpoint - (
+            self.left_encoder_value / (time.time() - self.current_time)
+        )
 
-        error_left = left_setpoint - (self.left_encoder_value / sample_time)
+        self.current_time = time.time()
 
         u_left = self.Kp * error_left
 
