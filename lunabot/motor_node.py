@@ -4,15 +4,16 @@ from std_msgs.msg import Int64
 from geometry_msgs.msg import Twist
 
 import RPi.GPIO as GPIO
+import math
 
 
 class MotorNode(Node):
     """Controls Motor
 
     NOTES:
-        - 70 RPM (at max work cycle)
+        - Measured pulse per rev: 500
         - Wheel Radius: 2cm
-        - max_speed ~=
+        - Vmax = 1000 counts / sec => 0.25 (m/s)
     """
 
     def __init__(self):
@@ -31,23 +32,31 @@ class MotorNode(Node):
         self.PWM_B = 0
 
         # Encoder Values
-        self.left_encoder_value = 0;
-        #self.right_encoder_value = 0;
+        self.pulse_per_rev = 500
+        self.left_encoder_value = 0
+        # self.right_encoder_value = 0;
 
         # robot characteristics
+        self.wheel_r = 0.02
+        self.V_MAX = 0.25  # m/s
+        self.V_MIN = -0.25  # m/s
         self.base_d = 0.165  # cm
+
+        # PID
+        self.Kp = 1
+        self.prev_error_left = 0
 
         self.setup()
 
         # TODO: TEST subscription
-        self.subscription = self.create_subscription(
+        self.motor_subscription = self.create_subscription(
             Twist,
             'motor_commands',
             self.motor_callback,
             10
         )
 
-        self.subscription = self.create_subscription(
+        self.left_encoder_subscription = self.create_subscription(
             Int64,
             'left_encoder',
             self.left_encoder_callback,
@@ -95,6 +104,8 @@ class MotorNode(Node):
         msg (Twist): linear.x and angular.z controls
 
         NOTE:
+            v_left = linear.x - (base * angular.z / 2)
+            v_right = linear.x + (base * angular.z / 2)
         """
         linear_x = msg.linear.x
         angular_z = msg.angular.z
@@ -112,9 +123,7 @@ class MotorNode(Node):
             """
         )
 
-        # Going forward or backward only
-        self.motor_left(100)
-        self.motor_right(100)
+        self.do_pid(linear_x, angular_z)
 
     def motor_left(self, speed: float) -> None:
         """Control left motor.  """
@@ -156,8 +165,61 @@ class MotorNode(Node):
             GPIO.output(self.MOTOR_B_PIN1, GPIO.LOW)
             GPIO.output(self.MOTOR_B_PIN2, GPIO.LOW)
 
+    def get_setpoints(self, linear_x, angular_z):
+        """Calculate the linear velocity in pulse per second"""
+        v_left_calculated = (linear_x - (self.base_d * angular_z / 2))
+        v_right_calculated = linear_x + (self.base_d * angular_z / 2)
+
+        if v_left_calculated > 0 and v_left_calculated > self.V_MAX:
+            v_left_calculated = self.V_MAX
+        elif v_left_calculated < 0 and v_left_calculated < self.V_MIN:
+            v_left_calculated = self.V_MIN
+
+        if v_right_calculated > 0 and v_right_calculated > self.V_MAX:
+            v_right_calculated = self.V_MAX
+        elif v_right_calculated < 0 and v_right_calculated < self.V_MIN:
+            v_right_calculated = self.V_MIN
+
+        left_setpoint = (
+            v_left_calculated
+            * self.pulse_per_rev
+            / (2 * math.pi*self.wheel_r)
+        )
+        right_setpoint = (
+            v_right_calculated
+            * self.pulse_per_rev
+            / (2 * math.pi*self.wheel_r)
+        )
+
+        return (left_setpoint, right_setpoint)
+
     def left_encoder_callback(self, msg):
-        self.left_encoder_value = msg.data
+        self.left_encoder_value = int(msg.data)
+
+    # def right_encoder_callback(self, msg):
+    #     self.right = int(msg.data)
+
+    def do_pid(self, linear_x, angular_z):
+        (
+            left_setpoint,
+            right_setpoint
+        ) = self.get_setpoints(linear_x, angular_z)
+
+        sample_time = self.get_period().nanoseconds() / 1e9
+
+        error_left = left_setpoint - (self.left_encoder_value / sample_time)
+
+        u_left = self.Kp * error_left
+
+        self.get_logger().info(f"""
+                -------------------------
+                encoder_left = {self.left_encoder_value}
+                -------------------------
+                u-left: {u_left}
+                ==========================
+            """
+        )
+
 
 def main(args=None):
     rclpy.init(args=args)
