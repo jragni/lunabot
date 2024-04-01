@@ -219,6 +219,7 @@ class MotorNode(Node):
                 ==========================
             """
         )
+        self.motor_left(u_left)
 
 
 def main(args=None):
