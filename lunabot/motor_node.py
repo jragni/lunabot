@@ -45,7 +45,8 @@ class MotorNode(Node):
 
         # PID
         self.current_time = time.time()
-        self.Kp = 1
+        self.Kp = 0.1
+        self.Kd = 0.3
         self.prev_error_left = 0
 
         self.setup()
@@ -218,6 +219,11 @@ class MotorNode(Node):
         self.current_time = time.time()
 
         p = self.Kp * error_left
+        d = self.Kd * error_left - self.prev_error_left
+
+        self.prev_error_left = error_left
+
+        u_left = p + d
 
         if u_left > 0 and u_left > 100:
             u_left = 100
