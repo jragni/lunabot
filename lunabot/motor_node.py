@@ -1,5 +1,6 @@
 import rclpy
-from rclpy.node import Node
+# from rclpy.node import Node
+from ros2_control import ControllerBase
 from std_msgs.msg import Int64
 from geometry_msgs.msg import Twist
 
@@ -7,7 +8,7 @@ import RPi.GPIO as GPIO
 import math
 
 
-class MotorNode(Node):
+class MotorNode(ControllerBase):
     """Controls Motor
 
     NOTES:
