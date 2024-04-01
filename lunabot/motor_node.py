@@ -125,6 +125,10 @@ class MotorNode(Node):
             """
         )
 
+        if linear_x == 0 and angular_z == 0:
+            self.motor_stop()
+            return
+
         self.do_pid(linear_x, angular_z)
 
     def motor_left(self, speed: float) -> None:
@@ -213,7 +217,7 @@ class MotorNode(Node):
 
         self.current_time = time.time()
 
-        u_left = self.Kp * error_left
+        p = self.Kp * error_left
 
         if u_left > 0 and u_left > 100:
             u_left = 100
