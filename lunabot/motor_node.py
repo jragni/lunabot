@@ -44,6 +44,7 @@ class MotorNode(Node):
         self.base_d = 0.165  # cm
 
         # PID
+        self.moving = False
         self.current_time = time.time()
         self.Kp = 0.1
         self.Kd = 0.3
@@ -128,6 +129,7 @@ class MotorNode(Node):
 
         if linear_x == 0 and angular_z == 0:
             self.motor_stop()
+            self.moving = False
             return
 
         self.do_pid(linear_x, angular_z)
@@ -212,14 +214,15 @@ class MotorNode(Node):
             right_setpoint
         ) = self.get_setpoints(linear_x, angular_z)
 
+        delta_t = time.time() - self.current_time
         error_left = left_setpoint - (
-            self.left_encoder_value / (time.time() - self.current_time)
+            self.left_encoder_value / delta_t
         )
 
         self.current_time = time.time()
 
         p = self.Kp * error_left
-        d = self.Kd * error_left - self.prev_error_left
+        d = self.Kd * (error_left - self.prev_error_left) / delta_t
 
         self.prev_error_left = error_left
 
@@ -235,6 +238,7 @@ class MotorNode(Node):
                 encoder_left = {self.left_encoder_value}
                 -------------------------
                 u-left: {u_left}
+                delta_t: {delta_t}
                 ==========================
             """
         )
