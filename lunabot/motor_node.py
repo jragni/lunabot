@@ -44,10 +44,9 @@ class MotorNode(Node):
         self.base_d = 0.165  # cm
 
         # PID
-        self.moving = False
         self.current_time = time.time()
-        self.Kp = 0.1
-        self.Kd = 0.3
+        self.Kp = 0.2
+        self.Kd = 0.5
         self.prev_error_left = 0
 
         self.setup()
@@ -129,7 +128,6 @@ class MotorNode(Node):
 
         if linear_x == 0 and angular_z == 0:
             self.motor_stop()
-            self.moving = False
             return
 
         self.do_pid(linear_x, angular_z)
@@ -238,6 +236,8 @@ class MotorNode(Node):
                 encoder_left = {self.left_encoder_value}
                 -------------------------
                 u-left: {u_left}
+                p: {p}
+                d: {d}
                 delta_t: {delta_t}
                 ==========================
             """
