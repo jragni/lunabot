@@ -215,6 +215,11 @@ class MotorNode(Node):
 
         u_left = self.Kp * error_left
 
+        if u_left > 0 and u_left > 100:
+            u_left = 100
+        elif u_left < 0 and u_left < -100:
+            u_left = -100
+
         self.get_logger().info(f"""
                 -------------------------
                 encoder_left = {self.left_encoder_value}
