@@ -8,11 +8,14 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
+find_package(image_transport REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
-
-find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+
 rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/InferenceResult.msg"
     "msg/YoloV8Inference.msg"

@@ -1,0 +1,23 @@
+[0.007s] Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+[0.021s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.117s] [31mCMake Error at CMakeLists.txt:11 (find_package):
+[0.117s]   By not providing "Findimage_transport.cmake" in CMAKE_MODULE_PATH this
+[0.117s]   project has asked CMake to find a package configuration file provided by
+[0.117s]   "image_transport", but CMake did not find one.
+[0.117s] 
+[0.117s]   Could not find a package configuration file provided by "image_transport"
+[0.117s]   with any of the following names:
+[0.117s] 
+[0.117s]     image_transportConfig.cmake
+[0.117s]     image_transport-config.cmake
+[0.117s] 
+[0.117s]   Add the installation prefix of "image_transport" to CMAKE_PREFIX_PATH or
+[0.117s]   set "image_transport_DIR" to a directory containing one of the above files.
+[0.117s]   If "image_transport" provides a separate development package or SDK, be
+[0.117s]   sure it has been installed.
+[0.117s] 
+[0.118s] [0m
+[0.118s] -- Configuring incomplete, errors occurred!
+[0.118s] See also "/home/ragglesoft/Desktop/ros_ws/build/lunabot/CMakeFiles/CMakeOutput.log".
+[0.118s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.120s] Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '2': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
