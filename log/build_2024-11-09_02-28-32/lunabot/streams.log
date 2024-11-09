@@ -1,0 +1,387 @@
+[0.007s] Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+[0.022s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.107s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.130s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.132s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.136s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.143s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.151s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.191s] -- Found image_transport: 3.1.9 (/opt/ros/humble/share/image_transport/cmake)
+[0.212s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.213s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.281s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.322s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[0.322s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.514s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.759s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.856s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.871s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.886s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.887s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.887s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.906s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.915s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.915s] -- Configured cppcheck include dirs: /home/ragglesoft/Desktop/ros_ws/src/lunabot/include
+[0.915s] -- Configured cppcheck exclude dirs and/or files: 
+[0.916s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.916s] -- Added test 'lint_cmake' to check CMake code style
+[0.917s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.918s] -- Added test 'uncrustify' to check C / C++ code style
+[0.918s] -- Configured uncrustify additional arguments: 
+[0.918s] -- Added test 'xmllint' to check XML markup files
+[0.920s] -- Configuring done
+[0.945s] -- Generating done
+[0.948s] -- Build files have been written to: /home/ragglesoft/Desktop/ros_ws/build/lunabot
+[0.966s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.974s] [  7%] [32mBuilding CXX object CMakeFiles/raw_image_node.dir/src/raw_image_publisher.cpp.o[0m
+[0.974s] [  7%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[0.980s] [  7%] Built target ament_cmake_python_copy_lunabot
+[1.199s] running egg_info
+[1.200s] creating lunabot.egg-info
+[1.200s] writing lunabot.egg-info/PKG-INFO
+[1.200s] writing dependency_links to lunabot.egg-info/dependency_links.txt
+[1.200s] writing top-level names to lunabot.egg-info/top_level.txt
+[1.200s] writing manifest file 'lunabot.egg-info/SOURCES.txt'
+[1.203s] reading manifest file 'lunabot.egg-info/SOURCES.txt'
+[1.203s] writing manifest file 'lunabot.egg-info/SOURCES.txt'
+[1.231s] [  7%] Built target lunabot__cpp
+[1.234s] [  7%] Built target ament_cmake_python_build_lunabot_egg
+[1.238s] [ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.238s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.239s] [ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.246s] [ 19%] [32mBuilding C object CMakeFiles/lunabot__rosidl_generator_c.dir/rosidl_generator_c/lunabot/msg/detail/inference_result__functions.c.o[0m
+[1.246s] [ 19%] [32mBuilding C object CMakeFiles/lunabot__rosidl_generator_c.dir/rosidl_generator_c/lunabot/msg/detail/yolo_v8_inference__functions.c.o[0m
+[1.294s] [ 21%] [32m[1mLinking C shared library liblunabot__rosidl_generator_c.so[0m
+[1.326s] [ 21%] Built target lunabot__rosidl_generator_c
+[1.334s] [ 24%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.334s] [ 26%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.337s] [ 29%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.498s] [ 31%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lunabot/msg/inference_result__type_support.cpp.o[0m
+[1.500s] [ 34%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lunabot/msg/yolo_v8_inference__type_support.cpp.o[0m
+[1.523s] [ 36%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lunabot/msg/detail/inference_result__type_support.cpp.o[0m
+[1.527s] [ 39%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lunabot/msg/detail/yolo_v8_inference__type_support.cpp.o[0m
+[1.556s] [ 41%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lunabot/msg/detail/dds_fastrtps/inference_result__type_support.cpp.o[0m
+[1.559s] [ 43%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lunabot/msg/detail/dds_fastrtps/yolo_v8_inference__type_support.cpp.o[0m
+[1.618s] [ 48%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_c.dir/rosidl_typesupport_c/lunabot/msg/yolo_v8_inference__type_support.cpp.o[0m
+[1.619s] [ 48%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_c.dir/rosidl_typesupport_c/lunabot/msg/inference_result__type_support.cpp.o[0m
+[1.661s] [ 51%] [32m[1mLinking CXX shared library liblunabot__rosidl_typesupport_c.so[0m
+[1.705s] [ 51%] Built target lunabot__rosidl_typesupport_c
+[1.712s] [ 53%] [32mBuilding C object CMakeFiles/lunabot__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lunabot/msg/detail/inference_result__type_support.c.o[0m
+[1.716s] [ 56%] [32mBuilding C object CMakeFiles/lunabot__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lunabot/msg/detail/yolo_v8_inference__type_support.c.o[0m
+[1.765s] [ 58%] [32m[1mLinking C shared library liblunabot__rosidl_typesupport_introspection_c.so[0m
+[1.798s] [ 58%] Built target lunabot__rosidl_typesupport_introspection_c
+[1.808s] [ 63%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lunabot/msg/detail/inference_result__type_support_c.cpp.o[0m
+[1.808s] [ 63%] [32mBuilding CXX object CMakeFiles/lunabot__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lunabot/msg/detail/yolo_v8_inference__type_support_c.cpp.o[0m
+[1.929s] [ 65%] [32m[1mLinking CXX shared library liblunabot__rosidl_typesupport_cpp.so[0m
+[1.987s] [ 65%] Built target lunabot__rosidl_typesupport_cpp
+[2.131s] [ 68%] [32m[1mLinking CXX shared library liblunabot__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.135s] [ 70%] [32m[1mLinking CXX shared library liblunabot__rosidl_typesupport_introspection_cpp.so[0m
+[2.141s] [ 73%] [32m[1mLinking CXX shared library liblunabot__rosidl_typesupport_fastrtps_c.so[0m
+[2.202s] [ 73%] Built target lunabot__rosidl_typesupport_fastrtps_cpp
+[2.204s] [ 73%] Built target lunabot__rosidl_typesupport_introspection_cpp
+[2.212s] [ 73%] Built target lunabot__rosidl_typesupport_fastrtps_c
+[2.225s] [ 73%] Built target lunabot
+[2.238s] [ 75%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.561s] [ 75%] Built target lunabot__py
+[2.575s] [ 80%] [32mBuilding C object CMakeFiles/lunabot__rosidl_generator_py.dir/rosidl_generator_py/lunabot/msg/_yolo_v8_inference_s.c.o[0m
+[2.575s] [ 80%] [32mBuilding C object CMakeFiles/lunabot__rosidl_generator_py.dir/rosidl_generator_py/lunabot/msg/_inference_result_s.c.o[0m
+[2.664s] [ 82%] [32m[1mLinking C shared library rosidl_generator_py/lunabot/liblunabot__rosidl_generator_py.so[0m
+[2.693s] [ 82%] Built target lunabot__rosidl_generator_py
+[2.708s] [ 90%] [32mBuilding C object CMakeFiles/lunabot__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/lunabot/_lunabot_s.ep.rosidl_typesupport_c.c.o[0m
+[2.708s] [ 90%] [32mBuilding C object CMakeFiles/lunabot__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/lunabot/_lunabot_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.708s] [ 90%] [32mBuilding C object CMakeFiles/lunabot__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/lunabot/_lunabot_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.791s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/lunabot/lunabot_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.791s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/lunabot/lunabot_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.791s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/lunabot/lunabot_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.820s] [ 97%] Built target lunabot__rosidl_typesupport_introspection_c__pyext
+[2.820s] [ 97%] Built target lunabot__rosidl_typesupport_fastrtps_c__pyext
+[2.820s] [ 97%] Built target lunabot__rosidl_typesupport_c__pyext
+[3.810s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:9:20:[m[K [01;31m[Kerror: [m[Kfound ‘[01m[K:[m[K’ in nested-name-specifier, expected ‘[01m[K::[m[K’
+[3.810s]     9 | using namespace std[01;31m[K:[m[Kchrono_literals;
+[3.810s]       |                    [01;31m[K^[m[K
+[3.810s]       |                    [32m[K::[m[K
+[3.814s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:[m[K In constructor ‘[01m[KRawImagePublisher::RawImagePublisher()[m[K’:
+[3.814s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:13:55:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+[3.814s]    13 |     RawImagePublisher() : Node("raw_image_pub", [01;31m[Kcount_(0)[m[K) {
+[3.814s]       |                                                 [01;31m[K~~~~~~^~~[m[K
+[3.819s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:14:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher[m[K’ was not declared in this scope; did you mean ‘[01m[Kpublisher_[m[K’?
+[3.819s]    14 |       [01;31m[Kpublisher[m[K = this -> create_publisher<sensor_msgs::msg::Image> ("raw_image", 10);
+[3.819s]       |       [01;31m[K^~~~~~~~~[m[K
+[3.819s]       |       [32m[Kpublisher_[m[K
+[3.823s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:15:7:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_[m[K’?
+[3.823s]    15 |       [01;31m[Ktimer[m[K = this -> create_wall_timer(500ms, std::bind(&RawImagePublisher::timer_callback, this, std::placeholder::_1));
+[3.823s]       |       [01;31m[K^~~~~[m[K
+[3.823s]       |       [32m[Ktimer_[m[K
+[3.831s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:15:105:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::placeholder[m[K’ has not been declared
+[3.831s]    15 |       timer = this -> create_wall_timer(500ms, std::bind(&RawImagePublisher::timer_callback, this, std::[01;31m[Kplaceholder[m[K::_1));
+[3.831s]       |                                                                                                         [01;31m[K^~~~~~~~~~~[m[K
+[3.831s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:[m[K In member function ‘[01m[Kvoid RawImagePublisher::timer_callback()[m[K’:
+[3.831s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcv::Mat::Mat(cv::Size, cv::Scalar)[m[K’
+[3.831s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;31m[K)[m[K;
+[3.831s]       |                                                                    [01;31m[K^[m[K
+[3.832s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.832s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.832s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.832s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.832s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1048:37:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Mat::Mat(const cv::MatCommaInitializer_<_Tp>&)[m[K’
+[3.832s]  1048 |     template<typename _Tp> explicit [01;36m[KMat[m[K(const MatCommaInitializer_<_Tp>& commaInitializer);
+[3.832s]       |                                     [01;36m[K^~~[m[K
+[3.832s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1048:37:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.832s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst cv::MatCommaInitializer_<_Tp>[m[K’
+[3.833s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.833s]       |                                                                    [01;36m[K^[m[K
+[3.833s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.833s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.833s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.833s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.833s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1044:37:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Mat::Mat(const cv::Point3_<_Tp>&, bool)[m[K’
+[3.833s]  1044 |     template<typename _Tp> explicit [01;36m[KMat[m[K(const Point3_<_Tp>& pt, bool copyData=true);
+[3.833s]       |                                     [01;36m[K^~~[m[K
+[3.833s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1044:37:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.833s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst cv::Point3_<_Tp>[m[K’
+[3.833s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.833s]       |                                                                    [01;36m[K^[m[K
+[3.833s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.833s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.833s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.833s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.834s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1040:37:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Mat::Mat(const cv::Point_<_Tp>&, bool)[m[K’
+[3.834s]  1040 |     template<typename _Tp> explicit [01;36m[KMat[m[K(const Point_<_Tp>& pt, bool copyData=true);
+[3.834s]       |                                     [01;36m[K^~~[m[K
+[3.834s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1040:37:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.834s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst cv::Point_<_Tp>[m[K’
+[3.834s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.834s]       |                                                                    [01;36m[K^[m[K
+[3.834s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.834s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.834s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.834s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.834s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1036:51:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int m, int n> cv::Mat::Mat(const cv::Matx<_Tp, m, n>&, bool)[m[K’
+[3.834s]  1036 |     template<typename _Tp, int m, int n> explicit [01;36m[KMat[m[K(const Matx<_Tp, m, n>& mtx, bool copyData=true);
+[3.834s]       |                                                   [01;36m[K^~~[m[K
+[3.834s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1036:51:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.834s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst cv::Matx<_Tp, m, n>[m[K’
+[3.834s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.834s]       |                                                                    [01;36m[K^[m[K
+[3.834s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.834s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.834s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.834s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.834s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1032:44:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, int n> cv::Mat::Mat(const cv::Vec<_Tp, m>&, bool)[m[K’
+[3.834s]  1032 |     template<typename _Tp, int n> explicit [01;36m[KMat[m[K(const Vec<_Tp, n>& vec, bool copyData=true);
+[3.835s]       |                                            [01;36m[K^~~[m[K
+[3.835s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1032:44:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.835s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst cv::Vec<_Tp, m>[m[K’
+[3.835s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.835s]       |                                                                    [01;36m[K^[m[K
+[3.835s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.835s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.835s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.835s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.835s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1028:49:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, long unsigned int _Nm> cv::Mat::Mat(const std::array<_Tp, _Nm>&, bool)[m[K’
+[3.835s]  1028 |     template<typename _Tp, size_t _Nm> explicit [01;36m[KMat[m[K(const std::array<_Tp, _Nm>& arr, bool copyData=false);
+[3.835s]       |                                                 [01;36m[K^~~[m[K
+[3.835s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1028:49:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.835s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst std::array<_Tp, _Nm>[m[K’
+[3.835s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.835s]       |                                                                    [01;36m[K^[m[K
+[3.835s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.835s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.835s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.835s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.835s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1024:37:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Mat::Mat(std::initializer_list<int>, std::initializer_list<_Tp>)[m[K’
+[3.835s]  1024 |     template<typename _Tp> explicit [01;36m[KMat[m[K(const std::initializer_list<int> sizes, const std::initializer_list<_Tp> list);
+[3.835s]       |                                     [01;36m[K^~~[m[K
+[3.835s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1024:37:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.835s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Scalar_<double>[m[K’ is not derived from ‘[01m[Kstd::initializer_list<_Tp>[m[K’
+[3.836s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.836s]       |                                                                    [01;36m[K^[m[K
+[3.836s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.836s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.836s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.836s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.836s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1020:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class> cv::Mat::Mat(std::initializer_list<_Tp>)[m[K’
+[3.836s]  1020 |     explicit [01;36m[KMat[m[K(const std::initializer_list<_Tp> list);
+[3.836s]       |              [01;36m[K^~~[m[K
+[3.836s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1020:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.836s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size_<int>[m[K’ is not derived from ‘[01m[Kstd::initializer_list<_Tp>[m[K’
+[3.836s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.836s]       |                                                                    [01;36m[K^[m[K
+[3.836s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.836s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.836s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.836s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.836s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1015:37:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> cv::Mat::Mat(const std::vector<BufferT>&, bool)[m[K’
+[3.836s]  1015 |     template<typename _Tp> explicit [01;36m[KMat[m[K(const std::vector<_Tp>& vec, bool copyData=false);
+[3.836s]       |                                     [01;36m[K^~~[m[K
+[3.836s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:1015:37:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.836s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:20:68:[m[K [01;36m[Knote: [m[K  ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} is not derived from ‘[01m[Kconst std::vector<BufferT>[m[K’
+[3.836s]    20 |       cv::Mat new_image(cv::Size(640, 480), cv::Scalar(255,255,255)[01;36m[K)[m[K;
+[3.836s]       |                                                                    [01;36m[K^[m[K
+[3.836s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.836s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.837s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.837s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:2091:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(cv::Mat&&)[m[K’
+[3.837s]  2091 |     [01;36m[KMat[m[K(Mat&& m);
+[3.837s]       |     [01;36m[K^~~[m[K
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:2091:5:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[3.837s] In file included from [01m[K/usr/include/opencv4/opencv2/core/cuda.hpp:1268[m[K,
+[3.837s]                  from [01m[K/usr/include/opencv4/opencv2/stitching/detail/warpers.hpp:47[m[K,
+[3.837s]                  from [01m[K/usr/include/opencv4/opencv2/stitching/warpers.hpp:46[m[K,
+[3.837s]                  from [01m[K/usr/include/opencv4/opencv2/stitching.hpp:48[m[K,
+[3.837s]                  from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:86[m[K,
+[3.837s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:7[m[K:
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/cuda.inl.hpp:713:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::cuda::GpuMat&)[m[K’
+[3.837s]   713 | [01;36m[KMat[m[K::Mat(const cuda::GpuMat& m)
+[3.837s]       | [01;36m[K^~~[m[K
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/cuda.inl.hpp:713:1:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[3.837s] In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+[3.837s]                  from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+[3.837s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+[3.837s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:5[m[K:
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:997:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::Mat&, const std::vector<cv::Range>&)[m[K’
+[3.837s]   997 |     [01;36m[KMat[m[K(const Mat& m, const std::vector<Range>& ranges);
+[3.837s]       |     [01;36m[K^~~[m[K
+[3.837s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:997:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+[3.837s]   997 |     Mat([01;36m[Kconst Mat& m[m[K, const std::vector<Range>& ranges);
+[3.838s]       |         [01;36m[K~~~~~~~~~~~^[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:987:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::Mat&, const cv::Range*)[m[K’
+[3.838s]   987 |     [01;36m[KMat[m[K(const Mat& m, const Range* ranges);
+[3.838s]       |     [01;36m[K^~~[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:987:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+[3.838s]   987 |     Mat([01;36m[Kconst Mat& m[m[K, const Range* ranges);
+[3.838s]       |         [01;36m[K~~~~~~~~~~~^[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:977:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::Mat&, const Rect&)[m[K’
+[3.838s]   977 |     [01;36m[KMat[m[K(const Mat& m, const Rect& roi);
+[3.838s]       |     [01;36m[K^~~[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:977:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+[3.838s]   977 |     Mat([01;36m[Kconst Mat& m[m[K, const Rect& roi);
+[3.838s]       |         [01;36m[K~~~~~~~~~~~^[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::Mat&, const cv::Range&, const cv::Range&)[m[K’
+[3.838s]   967 |     [01;36m[KMat[m[K(const Mat& m, const Range& rowRange, const Range& colRange=Range::all());
+[3.838s]       |     [01;36m[K^~~[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:967:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} to ‘[01m[Kconst cv::Mat&[m[K’
+[3.838s]   967 |     Mat([01;36m[Kconst Mat& m[m[K, const Range& rowRange, const Range& colRange=Range::all());
+[3.838s]       |         [01;36m[K~~~~~~~~~~~^[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:955:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const std::vector<int>&, int, void*, const size_t*)[m[K’
+[3.838s]   955 |     [01;36m[KMat[m[K(const std::vector<int>& sizes, int type, void* data, const size_t* steps=0);
+[3.838s]       |     [01;36m[K^~~[m[K
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:955:5:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 2 provided
+[3.838s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:941:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, const int*, int, void*, const size_t*)[m[K’
+[3.838s]   941 |     [01;36m[KMat[m[K(int ndims, const int* sizes, int type, void* data, const size_t* steps=0);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:941:5:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:926:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(cv::Size, int, void*, size_t)[m[K’
+[3.839s]   926 |     [01;36m[KMat[m[K(Size size, int type, void* data, size_t step=AUTO_STEP);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:926:5:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:910:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, int, int, void*, size_t)[m[K’
+[3.839s]   910 |     [01;36m[KMat[m[K(int rows, int cols, int type, void* data, size_t step=AUTO_STEP);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:910:5:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:894:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const cv::Mat&)[m[K’
+[3.839s]   894 |     [01;36m[KMat[m[K(const Mat& m);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:894:5:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:884:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const std::vector<int>&, int, const Scalar&)[m[K’
+[3.839s]   884 |     [01;36m[KMat[m[K(const std::vector<int>& sizes, int type, const Scalar& s);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:884:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:874:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, const int*, int, const Scalar&)[m[K’
+[3.839s]   874 |     [01;36m[KMat[m[K(int ndims, const int* sizes, int type, const Scalar& s);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:874:5:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 2 provided
+[3.839s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:863:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(const std::vector<int>&, int)[m[K’
+[3.839s]   863 |     [01;36m[KMat[m[K(const std::vector<int>& sizes, int type);
+[3.839s]       |     [01;36m[K^~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:863:33:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kcv::Size[m[K’ {aka ‘[01m[Kcv::Size_<int>[m[K’} to ‘[01m[Kconst std::vector<int>&[m[K’
+[3.840s]   863 |     Mat([01;36m[Kconst std::vector<int>& sizes[m[K, int type);
+[3.840s]       |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:856:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, const int*, int)[m[K’
+[3.840s]   856 |     [01;36m[KMat[m[K(int ndims, const int* sizes, int type);
+[3.840s]       |     [01;36m[K^~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:856:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:848:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(cv::Size, int, const Scalar&)[m[K’
+[3.840s]   848 |     [01;36m[KMat[m[K(Size size, int type, const Scalar& s);
+[3.840s]       |     [01;36m[K^~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:848:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:837:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, int, int, const Scalar&)[m[K’
+[3.840s]   837 |     [01;36m[KMat[m[K(int rows, int cols, int type, const Scalar& s);
+[3.840s]       |     [01;36m[K^~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:837:5:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 2 provided
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:826:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(cv::Size, int)[m[K’
+[3.840s]   826 |     [01;36m[KMat[m[K(Size size, int type);
+[3.840s]       |     [01;36m[K^~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:826:24:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kcv::Scalar[m[K’ {aka ‘[01m[Kcv::Scalar_<double>[m[K’} to ‘[01m[Kint[m[K’
+[3.840s]   826 |     Mat(Size size, [01;36m[Kint type[m[K);
+[3.840s]       |                    [01;36m[K~~~~^~~~[m[K
+[3.840s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:818:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat(int, int, int)[m[K’
+[3.840s]   818 |     [01;36m[KMat[m[K(int rows, int cols, int type);
+[3.841s]       |     [01;36m[K^~~[m[K
+[3.841s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:818:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[3.841s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:810:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Mat::Mat()[m[K’
+[3.841s]   810 |     [01;36m[KMat[m[K() CV_NOEXCEPT;
+[3.841s]       |     [01;36m[K^~~[m[K
+[3.841s] [01m[K/usr/include/opencv4/opencv2/core/mat.hpp:810:5:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+[3.841s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:28:30:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Ksensor_msgs::msg::Image_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::vector<unsigned char, std::allocator<unsigned char> >[m[K’} and ‘[01m[Kuchar*[m[K’ {aka ‘[01m[Kunsigned char*[m[K’})
+[3.841s]    28 |       msg_->data = new_image.[01;31m[Kdata[m[K;
+[3.841s]       |                              [01;31m[K^~~~[m[K
+[3.841s] In file included from [01m[K/usr/include/c++/11/vector:72[m[K,
+[3.841s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[3.841s]                  from [01m[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13[m[K,
+[3.841s]                  from [01m[K/usr/include/c++/11/algorithm:74[m[K,
+[3.841s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18[m[K,
+[3.841s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.841s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.841s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.841s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:1[m[K:
+[3.841s] [01m[K/usr/include/c++/11/bits/vector.tcc:198:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>][m[K’
+[3.841s]   198 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+[3.841s]       |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.841s] [01m[K/usr/include/c++/11/bits/vector.tcc:199:42:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kuchar*[m[K’ {aka ‘[01m[Kunsigned char*[m[K’} to ‘[01m[Kconst std::vector<unsigned char, std::allocator<unsigned char> >&[m[K’
+[3.841s]   199 |     operator=([01;36m[Kconst vector<_Tp, _Alloc>& __x[m[K)
+[3.841s]       |               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[3.841s] In file included from [01m[K/usr/include/c++/11/vector:67[m[K,
+[3.842s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[3.842s]                  from [01m[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13[m[K,
+[3.842s]                  from [01m[K/usr/include/c++/11/algorithm:74[m[K,
+[3.842s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18[m[K,
+[3.842s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.842s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.842s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.842s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:1[m[K:
+[3.842s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>][m[K’
+[3.842s]   709 |       [01;36m[Koperator[m[K=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+[3.842s]       |       [01;36m[K^~~~~~~~[m[K
+[3.842s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kuchar*[m[K’ {aka ‘[01m[Kunsigned char*[m[K’} to ‘[01m[Kstd::vector<unsigned char, std::allocator<unsigned char> >&&[m[K’
+[3.842s]   709 |       operator=([01;36m[Kvector&& __x[m[K) noexcept(_Alloc_traits::_S_nothrow_move())
+[3.842s]       |                 [01;36m[K~~~~~~~~~^~~[m[K
+[3.842s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>][m[K’
+[3.842s]   730 |       [01;36m[Koperator[m[K=(initializer_list<value_type> __l)
+[3.842s]       |       [01;36m[K^~~~~~~~[m[K
+[3.842s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kuchar*[m[K’ {aka ‘[01m[Kunsigned char*[m[K’} to ‘[01m[Kstd::initializer_list<unsigned char>[m[K’
+[3.842s]   730 |       operator=([01;36m[Kinitializer_list<value_type> __l[m[K)
+[3.842s]       |                 [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[3.842s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[3.842s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:41:32:[m[K [01;31m[Kerror: [m[K‘[01m[KMinimalImagePublisher[m[K’ was not declared in this scope; did you mean ‘[01m[KRawImagePublisher[m[K’?
+[3.842s]    41 |   auto node = std::make_shared<[01;31m[KMinimalImagePublisher[m[K>();
+[3.842s]       |                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[3.842s]       |                                [32m[KRawImagePublisher[m[K
+[3.843s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:41:54:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >()[m[K’
+[3.843s]    41 |   auto node = [01;31m[Kstd::make_shared<MinimalImagePublisher>()[m[K;
+[3.843s]       |               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[3.843s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[3.843s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[3.843s]                  from [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:1[m[K:
+[3.843s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+[3.843s]   875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+[3.843s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[3.843s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.843s] [01m[K/home/ragglesoft/Desktop/ros_ws/src/lunabot/src/raw_image_publisher.cpp:41:54:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.843s]    41 |   auto node = [01;31m[Kstd::make_shared<MinimalImagePublisher>()[m[K;
+[3.843s]       |               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[4.956s] gmake[2]: *** [CMakeFiles/raw_image_node.dir/build.make:76: CMakeFiles/raw_image_node.dir/src/raw_image_publisher.cpp.o] Error 1
+[4.956s] gmake[1]: *** [CMakeFiles/Makefile2:592: CMakeFiles/raw_image_node.dir/all] Error 2
+[4.956s] gmake: *** [Makefile:146: all] Error 2
+[4.958s] Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12

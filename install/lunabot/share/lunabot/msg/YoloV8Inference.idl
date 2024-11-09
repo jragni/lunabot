@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lunabot/msg/YoloV8Inference.msg
+// generated code does not contain a copyright notice
+
+#include "lunabot/msg/InferenceResult.idl"
+#include "std_msgs/msg/Header.idl"
+
+module lunabot {
+  module msg {
+    struct YoloV8Inference {
+      std_msgs::msg::Header header;
+
+      sequence<lunabot::msg::InferenceResult> yolov8_inference;
+    };
+  };
+};

@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.8)
 project(lunabot)
 
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ament_cmake_python REQUIRED)
+# find_package(ament_cmake_python REQUIRED) # for now comment out
+find_package(cv_bridge)
 find_package(image_transport REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
@@ -30,6 +32,8 @@ include_directories(include)
 # example: add_executable({name_exec} src/{name_of_file}.cpp)
 #          ament_target_dependencies({name_exec} rclcpp)
 
+add_executable(raw_image_node src/raw_image_publisher.cpp)
+ament_target_dependencies(raw_image_node rclcpp std_msgs sensor_msgs cv_bridge image_transport)
 # Install Cpp executables
 
 # examples: 
@@ -37,9 +41,14 @@ include_directories(include)
 #  cpp_executable
 #  DESTINATION lib/${PROJECT_NAME}
 # )
+install(TARGETS
+   raw_image_node
+   DESTINATION lib/${PROJECT_NAME}
+ )
+
 
 # Install Python modules
-ament_python_install_package(${PROJECT_NAME})
+# ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 

@@ -1,0 +1,50 @@
+[0.000000] (-) TimerEvent: {}
+[0.000186] (lunabot) JobQueued: {'identifier': 'lunabot', 'dependencies': OrderedDict()}
+[0.000209] (lunabot) JobStarted: {'identifier': 'lunabot'}
+[0.004957] (lunabot) JobProgress: {'identifier': 'lunabot', 'progress': 'cmake'}
+[0.005334] (lunabot) JobProgress: {'identifier': 'lunabot', 'progress': 'build'}
+[0.005838] (lunabot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ragglesoft/Desktop/ros_ws/build/lunabot', '--', '-j12', '-l12'], 'cwd': '/home/ragglesoft/Desktop/ros_ws/build/lunabot', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ragglesoft'), ('LANGUAGE', 'en.UTF-8'), ('SSH_CLIENT', 'fe80::b5:164e:399f:d8a9%wlp60s0 50827 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ragglesoft'), ('MOTD_SHOWN', 'pam'), ('OLDPWD', '/home/ragglesoft/Desktop/ros_ws/src'), ('LESS', '-R'), ('SSH_TTY', '/dev/pts/2'), ('ZSH', '/home/ragglesoft/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('LC_TERMINAL_VERSION', '3.5.5'), ('COLCON_PREFIX_PATH', '/home/ragglesoft/Desktop/ros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ragglesoft'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '21'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', 'localhost:10.0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble:/home/ragglesoft/Desktop/ros_ws/install/lunabot'), ('ROS_DOMAIN_ID', '30'), ('SHELL', '/bin/zsh'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_TERMINAL', 'iTerm2'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/ragglesoft/Desktop/ros_ws/build/lunabot'), ('SSH_CONNECTION', 'fe80::b5:164e:399f:d8a9%wlp60s0 50827 fe80::9e02:7c30:927c:bfc5%wlp60s0 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('MANPATH', '/usr/local/man:/usr/local/man:'), ('CMAKE_PREFIX_PATH', '/home/ragglesoft/Desktop/ros_ws/install/lunabot:/opt/ros/humble')]), 'shell': False}
+[0.021887] (lunabot) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099561] (-) TimerEvent: {}
+[0.106721] (lunabot) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.129487] (lunabot) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.131256] (lunabot) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.135209] (lunabot) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.141707] (lunabot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.150244] (lunabot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.189323] (lunabot) StdoutLine: {'line': b'-- Found image_transport: 3.1.9 (/opt/ros/humble/share/image_transport/cmake)\n'}
+[0.199660] (-) TimerEvent: {}
+[0.210084] (lunabot) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.211013] (lunabot) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.279200] (lunabot) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.299759] (-) TimerEvent: {}
+[0.319595] (lunabot) StdoutLine: {'line': b'-- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[0.319758] (lunabot) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.399877] (-) TimerEvent: {}
+[0.500112] (-) TimerEvent: {}
+[0.513722] (lunabot) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.600224] (-) TimerEvent: {}
+[0.700453] (-) TimerEvent: {}
+[0.759716] (lunabot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.800547] (-) TimerEvent: {}
+[0.855808] (lunabot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.871152] (lunabot) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.886625] (lunabot) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.886720] (lunabot) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.886767] (lunabot) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.900646] (-) TimerEvent: {}
+[0.905808] (lunabot) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:66 (message):\n'}
+[0.905937] (lunabot) StderrLine: {'line': b'  ament_python_install_package() the Python package folder\n'}
+[0.906067] (lunabot) StderrLine: {'line': b"  '/home/ragglesoft/Desktop/ros_ws/src/lunabot/lunabot' doesn't contain an\n"}
+[0.906122] (lunabot) StderrLine: {'line': b"  '__init__.py' file\n"}
+[0.906167] (lunabot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.906208] (lunabot) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:39 (_ament_cmake_python_install_package)\n'}
+[0.906249] (lunabot) StderrLine: {'line': b'  CMakeLists.txt:51 (ament_python_install_package)\n'}
+[0.906288] (lunabot) StderrLine: {'line': b'\n'}
+[0.906327] (lunabot) StderrLine: {'line': b'\x1b[0m\n'}
+[0.906365] (lunabot) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.906465] (lunabot) StdoutLine: {'line': b'See also "/home/ragglesoft/Desktop/ros_ws/build/lunabot/CMakeFiles/CMakeOutput.log".\n'}
+[0.911255] (lunabot) StderrLine: {'line': b'gmake: *** [Makefile:226: cmake_check_build_system] Error 1\n'}
+[0.912659] (lunabot) CommandEnded: {'returncode': 2}
+[0.933084] (lunabot) JobEnded: {'identifier': 'lunabot', 'rc': 2}
+[0.943802] (-) EventReactorShutdown: {}

@@ -1,0 +1,193 @@
+[0.008s] Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+[0.034s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_generator_c[0m
+[0.035s] [35m[1mConsolidate compiler generated dependencies of target raw_image_node[0m
+[0.042s] [  2%] Built target lunabot__cpp
+[0.042s] [ 12%] Built target lunabot__rosidl_generator_c
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_cpp[0m
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_fastrtps_c[0m
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_introspection_cpp[0m
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_fastrtps_cpp[0m
+[0.051s] [ 14%] [32mBuilding CXX object CMakeFiles/raw_image_node.dir/src/raw_image_publisher.cpp.o[0m
+[0.051s] [ 14%] Built target ament_cmake_python_copy_lunabot
+[0.054s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_c[0m
+[0.054s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_introspection_c[0m
+[0.062s] [ 34%] Built target lunabot__rosidl_typesupport_cpp
+[0.062s] [ 34%] Built target lunabot__rosidl_typesupport_fastrtps_cpp
+[0.063s] [ 43%] Built target lunabot__rosidl_typesupport_introspection_cpp
+[0.063s] [ 53%] Built target lunabot__rosidl_typesupport_introspection_c
+[0.064s] [ 63%] Built target lunabot__rosidl_typesupport_fastrtps_c
+[0.065s] [ 73%] Built target lunabot__rosidl_typesupport_c
+[0.079s] [ 73%] Built target lunabot
+[0.093s] [ 75%] Built target lunabot__py
+[0.100s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_generator_py[0m
+[0.109s] [ 82%] Built target lunabot__rosidl_generator_py
+[0.117s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_c__pyext[0m
+[0.118s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_introspection_c__pyext[0m
+[0.118s] [35m[1mConsolidate compiler generated dependencies of target lunabot__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.128s] [ 97%] Built target lunabot__rosidl_typesupport_fastrtps_c__pyext
+[0.128s] [ 97%] Built target lunabot__rosidl_typesupport_c__pyext
+[0.128s] [ 97%] Built target lunabot__rosidl_typesupport_introspection_c__pyext
+[0.264s] running egg_info
+[0.264s] writing lunabot.egg-info/PKG-INFO
+[0.264s] writing dependency_links to lunabot.egg-info/dependency_links.txt
+[0.265s] writing top-level names to lunabot.egg-info/top_level.txt
+[0.266s] reading manifest file 'lunabot.egg-info/SOURCES.txt'
+[0.267s] writing manifest file 'lunabot.egg-info/SOURCES.txt'
+[0.285s] [ 97%] Built target ament_cmake_python_build_lunabot_egg
+[4.438s] [100%] [32m[1mLinking CXX executable raw_image_node[0m
+[4.628s] [100%] Built target raw_image_node
+[4.636s] Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+[4.687s] Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ragglesoft/Desktop/ros_ws/build/lunabot
+[4.692s] -- Install configuration: ""
+[4.692s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/ament_index/resource_index/rosidl_interfaces/lunabot
+[4.692s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.692s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.692s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/inference_result.h
+[4.692s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__functions.c
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__functions.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__functions.c
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__functions.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__type_support.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__type_support.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__struct.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__struct.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/rosidl_generator_c__visibility_control.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/yolo_v8_inference.h
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/library_path.sh
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/library_path.dsv
+[4.693s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_generator_c.so
+[4.693s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_generator_c.so" to ""
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__rosidl_typesupport_fastrtps_c.h
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__rosidl_typesupport_fastrtps_c.h
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_fastrtps_c.so
+[4.694s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_fastrtps_c.so" to ""
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/inference_result.hpp
+[4.694s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/yolo_v8_inference.hpp
+[4.694s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__builder.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__builder.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__traits.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__struct.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__traits.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__struct.hpp
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/dds_fastrtps
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__rosidl_typesupport_fastrtps_cpp.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__rosidl_typesupport_fastrtps_cpp.hpp
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_fastrtps_cpp.so
+[4.695s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_fastrtps_cpp.so" to ""
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.695s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.695s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__type_support.c
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__type_support.c
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__rosidl_typesupport_introspection_c.h
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__rosidl_typesupport_introspection_c.h
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_introspection_c.so
+[4.696s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_introspection_c.so" to ""
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_c.so
+[4.696s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_c.so" to ""
+[4.696s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot
+[4.696s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg
+[4.696s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__type_support.cpp
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__rosidl_typesupport_introspection_cpp.hpp
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/yolo_v8_inference__rosidl_typesupport_introspection_cpp.hpp
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/include/lunabot/lunabot/msg/detail/inference_result__type_support.cpp
+[4.696s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_introspection_cpp.so
+[4.697s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_introspection_cpp.so" to ""
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_cpp.so
+[4.697s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_typesupport_cpp.so" to ""
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/pythonpath.sh
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/pythonpath.dsv
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot-0.0.0-py3.10.egg-info
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot-0.0.0-py3.10.egg-info/dependency_links.txt
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot-0.0.0-py3.10.egg-info/top_level.txt
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot-0.0.0-py3.10.egg-info/SOURCES.txt
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot-0.0.0-py3.10.egg-info/PKG-INFO
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/_lunabot_s.ep.rosidl_typesupport_c.c
+[4.697s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/_lunabot_s.ep.rosidl_typesupport_introspection_c.c
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/_lunabot_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_yolo_v8_inference.py
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/__init__.py
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_yolo_v8_inference_s.c
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_inference_result.py
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_inference_result_s.c
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/__init__.py
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.698s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/liblunabot__rosidl_generator_py.so
+[4.723s] Listing '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot'...
+[4.723s] Compiling '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/__init__.py'...
+[4.723s] Listing '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg'...
+[4.723s] Compiling '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/__init__.py'...
+[4.723s] Compiling '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_inference_result.py'...
+[4.723s] Compiling '/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/msg/_yolo_v8_inference.py'...
+[4.726s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.726s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.726s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.727s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.727s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/local/lib/python3.10/dist-packages/lunabot/lunabot_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_generator_py.so
+[4.727s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/liblunabot__rosidl_generator_py.so" to ""
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/msg/InferenceResult.idl
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/msg/YoloV8Inference.idl
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/msg/InferenceResult.msg
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/msg/YoloV8Inference.msg
+[4.727s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/lunabot/raw_image_node
+[4.728s] -- Set runtime path of "/home/ragglesoft/Desktop/ros_ws/install/lunabot/lib/lunabot/raw_image_node" to ""
+[4.728s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/ament_index/resource_index/package_run_dependencies/lunabot
+[4.728s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/ament_index/resource_index/parent_prefix_path/lunabot
+[4.728s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/ament_prefix_path.sh
+[4.728s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/ament_prefix_path.dsv
+[4.728s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/path.sh
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/environment/path.dsv
+[4.729s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/local_setup.bash
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/local_setup.sh
+[4.729s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/local_setup.zsh
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/local_setup.dsv
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/package.dsv
+[4.729s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/ament_index/resource_index/packages/lunabot
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_generator_cExport.cmake
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_generator_cExport-noconfig.cmake
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_typesupport_fastrtps_cExport.cmake
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_generator_cppExport.cmake
+[4.729s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_introspection_cExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_cExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_cExport-noconfig.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_introspection_cppExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_cppExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabot__rosidl_typesupport_cppExport-noconfig.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_generator_pyExport.cmake
+[4.730s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/export_lunabot__rosidl_generator_pyExport-noconfig.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/rosidl_cmake-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/ament_cmake_export_libraries-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/ament_cmake_export_targets-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabotConfig.cmake
+[4.731s] -- Up-to-date: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/cmake/lunabotConfig-version.cmake
+[4.731s] -- Installing: /home/ragglesoft/Desktop/ros_ws/install/lunabot/share/lunabot/package.xml
+[4.733s] Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ragglesoft/Desktop/ros_ws/build/lunabot

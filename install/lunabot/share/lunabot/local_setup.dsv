@@ -1,2 +1,4 @@
 source;share/lunabot/environment/ament_prefix_path.sh
+source;share/lunabot/environment/library_path.sh
 source;share/lunabot/environment/path.sh
+source;share/lunabot/environment/pythonpath.sh

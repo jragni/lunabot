@@ -1,0 +1,2 @@
+Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '2': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12

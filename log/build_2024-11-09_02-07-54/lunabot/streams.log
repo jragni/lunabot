@@ -1,0 +1,55 @@
+[0.008s] Invoking command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
+[0.022s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.107s] -- Found image_transport: 3.1.9 (/opt/ros/humble/share/image_transport/cmake)
+[0.130s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.132s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.136s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.143s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.152s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.175s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.176s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.248s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.323s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[0.323s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.459s] Error parsing '/home/ragglesoft/Desktop/ros_ws/src/lunabot/package.xml':
+[0.489s] Traceback (most recent call last):
+[0.489s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string
+[0.489s]     root = dom.parseString(data)
+[0.489s]   File "/usr/lib/python3.10/xml/dom/minidom.py", line 2000, in parseString
+[0.489s]     return expatbuilder.parseString(string)
+[0.490s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 925, in parseString
+[0.490s]     return builder.parseString(string)
+[0.490s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 223, in parseString
+[0.490s]     parser.Parse(string, True)
+[0.490s] xml.parsers.expat.ExpatError: mismatched tag: line 19, column 46
+[0.490s] 
+[0.490s] During handling of the above exception, another exception occurred:
+[0.490s] 
+[0.490s] Traceback (most recent call last):
+[0.490s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[0.490s]     main()
+[0.490s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[0.490s]     raise e
+[0.490s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[0.490s]     package = parse_package_string(
+[0.490s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string
+[0.490s]     raise InvalidPackage('The manifest contains invalid XML:\n%s' % ex, filename)
+[0.490s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/ragglesoft/Desktop/ros_ws/src/lunabot/package.xml':
+[0.491s] The manifest contains invalid XML:
+[0.491s] mismatched tag: line 19, column 46
+[0.499s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[0.499s]   execute_process(/usr/bin/python3
+[0.499s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[0.499s]   /home/ragglesoft/Desktop/ros_ws/src/lunabot/package.xml
+[0.499s]   /home/ragglesoft/Desktop/ros_ws/build/lunabot/ament_cmake_core/package.cmake)
+[0.499s]   returned error code 1
+[0.500s] Call Stack (most recent call first):
+[0.500s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[0.500s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:226 (ament_package_xml)
+[0.500s]   CMakeLists.txt:19 (rosidl_generate_interfaces)
+[0.500s] 
+[0.500s] [0m
+[0.500s] -- Configuring incomplete, errors occurred!
+[0.500s] See also "/home/ragglesoft/Desktop/ros_ws/build/lunabot/CMakeFiles/CMakeOutput.log".
+[0.505s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.507s] Invoked command in '/home/ragglesoft/Desktop/ros_ws/build/lunabot' returned '2': /usr/bin/cmake --build /home/ragglesoft/Desktop/ros_ws/build/lunabot -- -j12 -l12
