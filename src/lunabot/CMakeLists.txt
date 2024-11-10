@@ -32,8 +32,7 @@ include_directories(include)
 # example: add_executable({name_exec} src/{name_of_file}.cpp)
 #          ament_target_dependencies({name_exec} rclcpp)
 
-add_executable(raw_image_node src/raw_image_publisher.cpp)
-ament_target_dependencies(raw_image_node rclcpp std_msgs sensor_msgs cv_bridge image_transport)
+
 # Install Cpp executables
 
 # examples: 
@@ -41,10 +40,6 @@ ament_target_dependencies(raw_image_node rclcpp std_msgs sensor_msgs cv_bridge i
 #  cpp_executable
 #  DESTINATION lib/${PROJECT_NAME}
 # )
-install(TARGETS
-   raw_image_node
-   DESTINATION lib/${PROJECT_NAME}
- )
 
 
 # Install Python modules
