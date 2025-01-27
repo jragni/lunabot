@@ -9,7 +9,7 @@
 
 class VideoPublisher : public rclcpp::Node {
   public:
-    VideoPublisher() : Node('camera_node') {
+    VideoPublisher() : Node("camera_node") {
       publisher_ = this->create_publisher<sensor_msgs::msg::Image>("raw_image", 20);
 
       video_cap_.open(0);
@@ -20,7 +20,7 @@ class VideoPublisher : public rclcpp::Node {
 
       timer_ = this->create_wall_timer(
         std::chrono::milliseconds(33),
-        std::bind(&VideoPublisher::timer_callback, this);
+        std::bind(&VideoPublisher::timer_callback, this)
       );
     }
   private:
