@@ -39,8 +39,6 @@ class VideoPublisher : public rclcpp::Node {
           frame
         ).toImageMsg();
 
-        msg->header.stamp = this->now();
-        msg->header.frame_id = "raw_image";
         publisher_->publish(*msg);
         RCLCPP_INFO(this->get_logger(), "image publish count %zu", count_);
         this->count_++;
