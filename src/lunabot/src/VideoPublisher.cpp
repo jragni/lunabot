@@ -24,25 +24,28 @@ class VideoPublisher : public rclcpp::Node {
       );
     }
   private:
-  rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
-  cv::VideoCapture video_cap_;
+    size_t count_=0;
+    rclcpp::TimerBase::SharedPtr timer_;
+    rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
+    cv::VideoCapture video_cap_;
 
-  void timer_callback() {
-    cv::Mat frame;
+    void timer_callback() {
+      cv::Mat frame;
 
-    if (video_cap_.read(frame)) {
-      sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(
-        std_msgs::msg::Header(),
-        "bgr8",
-        frame
-      ).toImageMsg();
+      if (video_cap_.read(frame)) {
+        sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(
+          std_msgs::msg::Header(),
+          "bgr8",
+          frame
+        ).toImageMsg();
 
-      msg->header.stamp = this->now();
-      msg->header.frame_id = "raw_image";
-      publisher_->publish(*msg);
+        msg->header.stamp = this->now();
+        msg->header.frame_id = "raw_image";
+        publisher_->publish(*msg);
+        RCLCPP_INFO(this->get_logger(), "image publish count %d", count_);
+        this->count_++;
+      }
     }
-  }
 };
 
 int main(int argc, char** argv) {
