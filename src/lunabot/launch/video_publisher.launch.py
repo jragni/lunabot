@@ -6,7 +6,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package="lunabot",
-            executable="camera_node",
+            executable="video_publisher_node",
             output="screen"
         )
     ])
