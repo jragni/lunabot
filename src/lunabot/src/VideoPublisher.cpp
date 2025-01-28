@@ -19,7 +19,7 @@ class VideoPublisher : public rclcpp::Node {
       }
 
       timer_ = this->create_wall_timer(
-        std::chrono::milliseconds(100),
+        std::chrono::milliseconds(10),
         std::bind(&VideoPublisher::timer_callback, this)
       );
     }
