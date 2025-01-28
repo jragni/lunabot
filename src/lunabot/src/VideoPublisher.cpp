@@ -10,7 +10,7 @@
 class VideoPublisher : public rclcpp::Node {
   public:
     VideoPublisher() : Node("camera_node") {
-      publisher_ = this->create_publisher<sensor_msgs::msg::Image>("raw_image", 20);
+      publisher_ = this->create_publisher<sensor_msgs::msg::Image>("raw_image", 10);
 
       video_cap_.open(0);
       if (!video_cap_.isOpened()) {
@@ -33,6 +33,7 @@ class VideoPublisher : public rclcpp::Node {
       cv::Mat frame;
 
       if (video_cap_.read(frame)) {
+        video_cap_ >> frame;
         sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(
           std_msgs::msg::Header(),
           "bgr8",
