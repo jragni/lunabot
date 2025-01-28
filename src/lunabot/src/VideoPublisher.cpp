@@ -32,7 +32,9 @@ class VideoPublisher : public rclcpp::Node {
     void timer_callback() {
       cv::Mat frame;
 
-      if (video_cap_.read(frame)) {
+      video_cap_.read(frame);
+
+      if (!frame.empty()) {
         sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(
           std_msgs::msg::Header(),
           "bgr8",
