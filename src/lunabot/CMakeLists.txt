@@ -41,10 +41,10 @@ install(TARGETS
 
 ament_python_install_package(${PROJECT_NAME})
 
-install(PROGRAMS
-  scripts
-  DESTINATION lib/${PROJECT_NAME}
-)
+# for python
+# install(PROGRAMS
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 install(DIRECTORY
   launch
