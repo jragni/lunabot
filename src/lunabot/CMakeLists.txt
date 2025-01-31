@@ -17,6 +17,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(ament_cmake_python REQUIRED)  # for python
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -35,6 +36,13 @@ ament_target_dependencies(video_publisher_node rclcpp std_msgs cv_bridge OpenCV 
 
 install(TARGETS
   video_publisher_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_python_install_package(${PROJECT_NAME})
+
+install(PROGRAMS
+  scripts
   DESTINATION lib/${PROJECT_NAME}
 )
 
