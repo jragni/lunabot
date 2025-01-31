@@ -7,6 +7,10 @@ install/
 log/
 build/
 
+install/*
+log/*
+build/*
+
 # Ignore generated docs
 doc/_build/
 docs/_build/
