@@ -1,11 +1,8 @@
 # ROS2 specific ignores
-*/install/*
-*/log/*
-*/build/*
+**/install/
+**/log/
+**/build/
 
-install/
-log/
-build/
 
 install/*
 log/*
