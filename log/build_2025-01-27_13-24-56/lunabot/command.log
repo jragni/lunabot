@@ -1,6 +1,0 @@
-Invoking command in '/home/ragglesoft/lunabot/build/lunabot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ragglesoft/lunabot/src/lunabot -DCMAKE_INSTALL_PREFIX=/home/ragglesoft/lunabot/install/lunabot
-Invoked command in '/home/ragglesoft/lunabot/build/lunabot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ragglesoft/lunabot/src/lunabot -DCMAKE_INSTALL_PREFIX=/home/ragglesoft/lunabot/install/lunabot
-Invoking command in '/home/ragglesoft/lunabot/build/lunabot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/lunabot/build/lunabot -- -j12 -l12
-Invoked command in '/home/ragglesoft/lunabot/build/lunabot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ragglesoft/lunabot/build/lunabot -- -j12 -l12
-Invoking command in '/home/ragglesoft/lunabot/build/lunabot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ragglesoft/lunabot/build/lunabot
-Invoked command in '/home/ragglesoft/lunabot/build/lunabot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ragglesoft/lunabot/build/lunabot
