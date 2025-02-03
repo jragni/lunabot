@@ -35,8 +35,12 @@ endif()
 add_executable(video_publisher_node src/VideoPublisher.cpp)
 ament_target_dependencies(video_publisher_node rclcpp std_msgs cv_bridge OpenCV sensor_msgs)
 
+add_executable(minimal_twist_node src/MinimalTwistControl.cpp)
+ament_target_dependencies(minimal_twist_node rclcpp geometry_msgs custom_interfaces)
+
 install(TARGETS
   video_publisher_node
+  minimal_twist_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

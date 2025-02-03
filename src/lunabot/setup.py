@@ -1,3 +1,5 @@
+import os
+import glob
 from setuptools import setup
 
 setup(
@@ -6,8 +8,9 @@ setup(
     packages=['lunabot'],
     data_files=[
         ('share/ament_index/resource_index/packages',
-            ['resource/' + 'my_mixed_package']),
+            ['resource/' + 'lunabot']),
         ('share/' + 'lunabot', ['package.xml']),
+        (os.path.join('share', 'lunabot'), glob('launch/*.launch.py'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,

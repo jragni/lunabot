@@ -8,6 +8,7 @@ def generate_launch_description():
         Node(
             package="lunabot",
             executable="inference_node",
+            name="inference_node",
             output="screen"
         )
     ])

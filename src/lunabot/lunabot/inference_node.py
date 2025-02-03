@@ -49,7 +49,6 @@ class InferenceNode(Node):
             pub_msg_.y2 = int(y2)
             pub_msg_.confidence = score
             pub_msg_.class_id = int(class_id)
-            print(f'x1: {x1}, y1: {y1}, x2: {x2}, y2: {y2}, score: {score}, class_id: {class_id}')
             self.pub_.publish(pub_msg_)
 
 

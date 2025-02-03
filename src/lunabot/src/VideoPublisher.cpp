@@ -34,6 +34,8 @@ class VideoPublisher : public rclcpp::Node {
 
       if (video_cap_.read(frame)) {
         video_cap_ >> frame;
+
+        // create image message
         sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(
           std_msgs::msg::Header(),
           "bgr8",
