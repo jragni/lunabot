@@ -18,6 +18,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(custom_interfaces REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -42,9 +43,10 @@ install(TARGETS
 ament_python_install_package(${PROJECT_NAME})
 
 # for python
-# install(PROGRAMS
-#   DESTINATION lib/${PROJECT_NAME}
-# )
+install(PROGRAMS
+  lunabot/inference_node.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 install(DIRECTORY
   launch

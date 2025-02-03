@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+          "inference_node = lunabot.inference_node:main",
         ],
     },
 )
