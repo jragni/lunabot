@@ -6,7 +6,10 @@ from rclpy.node import Node
 
 from sensor_msgs.msg import Image
 from custom_interfaces.msg import InferenceResult
+from std_msgs.msg import Header
+
 from cv_bridge import CvBridge
+import cv2
 
 cv_bridge = CvBridge()
 
@@ -27,6 +30,12 @@ class InferenceNode(Node):
             10
         )
 
+        self.pub_annotated_image_ = self.create_publisher(
+            Image,
+            "annotated_image",
+            10
+        )
+
         self.pub_ = self.create_publisher(
             InferenceResult,
             "inference_result",
@@ -42,6 +51,31 @@ class InferenceNode(Node):
         for result in results.boxes.data.tolist():
             x1, y1, x2, y2, score, class_id = result
 
+            cv2.rectangle(
+                img,
+                (int(x1), int(y1)),
+                (int(x2), int(y2)),
+                (0, 255, 0),
+                4
+            )
+            cv2.putText(
+                img,
+                results.names[int(class_id)].upper() + f"Certainity: {score}",
+                (int(x1), int(y1-10)),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1.3,
+                (0, 255, 0),
+                3,
+                cv2.LINE_AA
+            )
+
+            # Publish annotated image
+            pub_annotated_msg_ = cv_bridge.cv2_to_imgmsg(img, "bgr8", Header())
+            pub_annotated_msg_.header.stamp = self.get_clock().now().to_msg()
+            pub_annotated_msg_.header.frame_id = "annotated_image"
+            self.pub_annotated_image_.publish(pub_annotated_msg_)
+
+            # Publish inference resule
             pub_msg_ = InferenceResult()
             pub_msg_.x1 = int(x1)
             pub_msg_.y1 = int(y1)
