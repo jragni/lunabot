@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from pathlib import Path
 from ultralytics import YOLO
 
 import rclpy
@@ -20,9 +21,7 @@ class InferenceNode(Node):
 
     def __init__(self):
         super().__init__('cv_transform_node')
-        self.model = YOLO(
-            '/home/ragglesoft/lunabot/src/lunabot/models/best.pt'
-        )
+        self.model = YOLO("src/lunabot/models/yolo11n.pt")
         self.sub_ = self.create_subscription(
             Image,
             'raw_image',
@@ -74,6 +73,7 @@ class InferenceNode(Node):
               4,
             )
 
+            print(f'ID: {class_id}, name: {results.names[int(class_id)]}')
             cv2.putText(
                 img,
                 results.names[int(class_id)].upper() + f"Certainity: {score}",
@@ -91,7 +91,7 @@ class InferenceNode(Node):
             pub_annotated_msg_.header.frame_id = "annotated_image"
             self.pub_annotated_image_.publish(pub_annotated_msg_)
 
-            # Publish inference resule
+            # Publish inference result
             pub_msg_ = InferenceResult()
             pub_msg_.x1 = int(x1)
             pub_msg_.y1 = int(y1)

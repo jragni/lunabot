@@ -25,7 +25,8 @@ class MinimalTwistNode : public rclcpp::Node {
       auto twist = geometry_msgs::msg::Twist();
       // RCLCPP_INFO(this->get_logger(), "I heard: '%ld' '%ld", msg->x1, msg->x2);
 
-      if (!msg) {
+      // Checks if feature detected is a cat, dog, or bear (hopefully not!)
+      if (!msg || msg->class_id != 15 || msg->class_id != 16 || msg->class_id != 21) {
         twist.linear.x = 0.0;
         twist.angular.z = 0.0;
       } else {
