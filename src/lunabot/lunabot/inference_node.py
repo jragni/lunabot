@@ -59,18 +59,18 @@ class InferenceNode(Node):
                 (0, 255, 0),
                 3
             )
-
-            target_x1 = img.shape[0] // 4
-            target_y1 = img.shape[1] // 4
-            target_x2 = 3 * img.shape[0] // 4
-            target_y2 = 3 * img.shape[1] // 4
+            height, width, _ = img.shape
+            target_x1 = width // 4
+            target_y1 = height // 4
+            target_x2 = (width // 2) + width // 4
+            target_y2 = (height // 2) + height // 4
 
             # Add target area
             cv2.rectangle(
               img,
               (target_x1, target_y1),
               (target_x2, target_y2),
-              (255, 0, 0),
+              (0, 0, 255),
               4,
             )
 
