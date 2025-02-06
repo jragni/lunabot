@@ -99,6 +99,8 @@ class InferenceNode(Node):
             pub_msg_.y2 = int(y2)
             pub_msg_.confidence = score
             pub_msg_.class_id = int(class_id)
+            pub_msg_.frame_height = height
+            pub_msg_.frame_width = width
             self.pub_.publish(pub_msg_)
 
 

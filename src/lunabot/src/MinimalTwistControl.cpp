@@ -37,10 +37,10 @@ class MinimalTwistNode : public rclcpp::Node {
         int image_y_center = (msg->y1 + msg->y2) / 2;
 
         // Assuming 640 x 480 img
-        int x_low_limit = 640 / 4;
-        int x_high_limit = 3 * 640 / 4;
-        int y_low_limit = 480 / 4;
-        int y_high_limit = 3 * 480 / 4;
+        int x_low_limit = msg->frame_width / 4;
+        int x_high_limit = msg->frame_width + msg->frame_width / 4;
+        int y_low_limit = msg->frame_height / 4;
+        int y_high_limit = msg->frame_height + msg ->frame_height / 4;
 
         if (image_x_center < x_low_limit) {
           twist.angular.z = -0.15;
