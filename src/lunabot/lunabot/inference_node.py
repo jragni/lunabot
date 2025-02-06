@@ -51,13 +51,29 @@ class InferenceNode(Node):
         for result in results.boxes.data.tolist():
             x1, y1, x2, y2, score, class_id = result
 
+            # Add bounding box of detected objects
             cv2.rectangle(
                 img,
                 (int(x1), int(y1)),
                 (int(x2), int(y2)),
                 (0, 255, 0),
-                4
+                3
             )
+
+            target_x1 = img.shape[0] // 4
+            target_y1 = img.shape[1] // 4
+            target_x2 = 3 * img.shape[0] // 4
+            target_y2 = 3 * img.shape[1] // 4
+
+            # Add target area
+            cv2.rectangle(
+              img,
+              (target_x1, target_y1),
+              (target_x2, target_y2),
+              (255, 0, 0),
+              4,
+            )
+
             cv2.putText(
                 img,
                 results.names[int(class_id)].upper() + f"Certainity: {score}",
