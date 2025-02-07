@@ -11,7 +11,7 @@ def generate_launch_description():
       ),
       Node(
         package="lunabot",
-        executable="inference_node",
+        executable="inference_node.py",
         output="screen"
       ),
       Node(
