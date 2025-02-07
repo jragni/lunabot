@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from pathlib import Path
 from ultralytics import YOLO
 
 import rclpy
