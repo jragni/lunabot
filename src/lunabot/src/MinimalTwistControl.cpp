@@ -23,20 +23,21 @@ class MinimalTwistNode : public rclcpp::Node {
 
     void topic_callback(const custom_interfaces::msg::InferenceResult::SharedPtr msg) {
       auto twist = geometry_msgs::msg::Twist();
-      // RCLCPP_INFO(this->get_logger(), "I heard: '%ld' '%ld", msg->x1, msg->x2);
 
       // Checks if feature detected is a cat, dog, or bear (hopefully not!)
       RCLCPP_INFO(this->get_logger(), "class id = %ld", msg->class_id);
 
-      if (msg->class_id != 15 && msg->class_id != 16 && msg->class_id != 21) {
+      if (
+        msg->class_id != 15
+        && msg->class_id != 16
+        && msg->class_id != 21
+      ) {
         twist.linear.x = 0.0;
         twist.angular.z = 0.0;
         RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
       } else {
-        // TODO add support for different frame shape
 
         // TODO break out into function later
-        RCLCPP_INFO(this->get_logger(), "here");
 
         int image_x_center = (msg->x1 + msg->x2) / 2;
         int image_y_center = (msg->y1 + msg->y2) / 2;
@@ -54,6 +55,7 @@ class MinimalTwistNode : public rclcpp::Node {
         } else {
           twist.angular.z = 0;
         }
+        RCLCPP_INFO(this->get_logger(), "here %f", twist.angular.z);
 
       }
 
