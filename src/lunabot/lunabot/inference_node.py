@@ -61,8 +61,8 @@ class InferenceNode(Node):
 
             target_x1 = width // 2 - width // 8
             target_x2 = (width // 2) + width // 8
-            target_y1 = height // 4
-            target_y2 = (height // 2) + height // 4
+            target_y1 = height // 2 + width // 8
+            target_y2 = (height // 2) - height // 8
 
             # Add target area
             cv2.rectangle(
