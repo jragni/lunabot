@@ -58,12 +58,11 @@ class InferenceNode(Node):
                 (0, 255, 0),
                 3
             )
-
-            # Add to function later
             height, width, _ = img.shape
-            target_x1 = width // 4
+
+            target_x1 = width // 2 - width // 8
+            target_x2 = (width // 2) + width // 8
             target_y1 = height // 4
-            target_x2 = (width // 2) + width // 4
             target_y2 = (height // 2) + height // 4
 
             # Add target area
