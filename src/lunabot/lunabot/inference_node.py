@@ -92,7 +92,7 @@ class InferenceNode(Node):
             self.pub_annotated_image_.publish(pub_annotated_msg_)
 
             # Publish inference result only for bear, cat, or dog
-            if class_id in [15, 16, 21]:
+            if int(class_id) in [15, 16, 21]:
                 pub_msg_ = InferenceResult()
                 pub_msg_.x1 = int(x1)
                 pub_msg_.y1 = int(y1)
