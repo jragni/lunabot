@@ -31,7 +31,7 @@ class MinimalTwistNode : public rclcpp::Node {
       if (msg->class_id != 15 || msg->class_id != 16 || msg->class_id != 21) {
         twist.linear.x = 0.0;
         twist.angular.z = 0.0;
-        RCLCPP_INFO(this->get_logger(), "Rejected");
+        RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
       } else {
         // TODO add support for different frame shape
 
