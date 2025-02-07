@@ -6,6 +6,7 @@ from rclpy.node import Node
 
 from sensor_msgs.msg import Image
 from custom_interfaces.msg import InferenceResult
+from geometry_msgs.msg import Twist
 from std_msgs.msg import Header
 
 from cv_bridge import CvBridge
@@ -40,6 +41,12 @@ class InferenceNode(Node):
             10
         )
 
+        self.vel_pub_ = self.create_publisher(
+          Twist,
+          "cmd_vel",
+          10,
+        )
+
     def topic_callback(self, message):
         """Subscribe to topic and publish annotated image."""
 
@@ -61,7 +68,7 @@ class InferenceNode(Node):
 
             target_x1 = width // 2 - width // 8
             target_x2 = (width // 2) + width // 8
-            target_y1 = height - height // 4
+            target_y1 = height // 2
             target_y2 = height
 
             # Add target area
@@ -103,6 +110,11 @@ class InferenceNode(Node):
                 pub_msg_.frame_height = height
                 pub_msg_.frame_width = width
                 self.pub_.publish(pub_msg_)
+            else:
+                vel_pub_msg_ = Twist()
+                vel_pub_msg_.linear.x = 0.0
+                vel_pub_msg_.angular.z = 0.0
+                self.vel_pub_.publish(vel_pub_msg_)
 
 
 if __name__ == "__main__":

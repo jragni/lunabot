@@ -15,6 +15,12 @@ class MinimalTwistNode : public rclcpp::Node {
         std::bind(&MinimalTwistNode::topic_callback, this, std::placeholders::_1)
       );
     }
+    ~MinimalTwistNode (){
+      auto stop_twist_msg = geometry_msgs::msg::Twist();
+      stop_twist_msg.angular.z = 0;
+      stop_twist_msg.linear.x = 0;
+      this->publisher_->publish(stop_twist_msg);
+    }
 
   private:
     rclcpp::TimerBase::SharedPtr timer_;
@@ -28,14 +34,10 @@ class MinimalTwistNode : public rclcpp::Node {
       RCLCPP_INFO(this->get_logger(), "class id = %ld", msg->class_id);
 
       if (
-        msg->class_id != 15
-        && msg->class_id != 16
-        && msg->class_id != 21
+        msg->class_id == 15
+        || msg->class_id == 16
+        || msg->class_id == 21
       ) {
-        twist.linear.x = 0.0;
-        twist.angular.z = 0.0;
-        RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
-      } else {
 
         // TODO break out into function later
 
@@ -46,25 +48,28 @@ class MinimalTwistNode : public rclcpp::Node {
         int x_low_limit = msg->frame_width / 2 - msg->frame_width / 8;
         int x_high_limit = msg->frame_width / 2 + msg->frame_width / 8;
         int y_low_limit = msg->frame_height;
-        int y_high_limit = msg->frame_height - msg->frame_height / 4;
+        int y_high_limit = msg->frame_height / 2;
 
         RCLCPP_INFO(this->get_logger(), "low: %d, high: %d goal: %d", y_low_limit, y_high_limit, image_y_center);
-        if (image_y_center < y_high_limit) {
-          twist.linear.x = 0.20;
-        } else {
-          twist.linear.x = 0.0;
-        }
-        RCLCPP_INFO(this->get_logger(), "twist -x: %f", twist.linear.x);
+        // if (image_y_center < y_high_limit) {
+        //   twist.linear.x = 0.2;
+        // } else {
+        //   twist.linear.x = 0.0;
+        // }
 
         if (image_x_center < x_low_limit) {
-          twist.angular.z = -0.15;
+          twist.angular.z = 0.18;
         } else if (image_x_center > x_high_limit) {
-          twist.angular.z = 0.15;
+          twist.angular.z = -0.18;
         } else {
-          twist.angular.z = 0;
+          twist.angular.z = 0.0;
         }
-        RCLCPP_INFO(this->get_logger(), "here %f", twist.angular.z);
+        RCLCPP_INFO(this->get_logger(), "linear: %f, angular %f", twist.linear.x, twist.angular.z);
 
+      } else {
+        twist.linear.x = 0.0;
+        twist.angular.z = 0.0;
+        RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
       }
 
       publisher_->publish(twist);
@@ -73,8 +78,8 @@ class MinimalTwistNode : public rclcpp::Node {
 
 int main(int argc, char** argv) {
   rclcpp::init(argc, argv);
-
-  rclcpp::spin(std::make_shared<MinimalTwistNode>());
+  std::shared_ptr<MinimalTwistNode> node =  std::make_shared<MinimalTwistNode>();
+  rclcpp::spin(node);
 
   rclcpp::shutdown();
   return 0;
