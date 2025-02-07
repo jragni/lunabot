@@ -28,7 +28,7 @@ class MinimalTwistNode : public rclcpp::Node {
       // Checks if feature detected is a cat, dog, or bear (hopefully not!)
       RCLCPP_INFO(this->get_logger(), "class id = %ld", msg->class_id);
 
-      if (msg->class_id != 15 || msg->class_id != 16 || msg->class_id != 21) {
+      if (msg->class_id != 15 && msg->class_id != 16 && msg->class_id != 21) {
         twist.linear.x = 0.0;
         twist.angular.z = 0.0;
         RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
