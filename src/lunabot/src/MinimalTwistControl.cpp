@@ -57,9 +57,9 @@ class MinimalTwistNode : public rclcpp::Node {
         }
 
         if (image_x_center < x_low_limit) {
-          twist.angular.z = 0.15;
-        } else if (image_x_center > x_high_limit) {
           twist.angular.z = -0.15;
+        } else if (image_x_center > x_high_limit) {
+          twist.angular.z = 0.15;
         } else {
           twist.angular.z = 0;
         }
