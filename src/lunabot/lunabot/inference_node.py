@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
 
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import CompressedImage, Image
 from custom_interfaces.msg import InferenceResult
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Header
@@ -23,10 +23,10 @@ class InferenceNode(Node):
         super().__init__('cv_transform_node')
         self.model = YOLO("src/lunabot/models/yolo11n.pt")
         self.sub_ = self.create_subscription(
-            Image,
-            'raw_image',
+            CompressedImage,
+            '/camera/image/compressed',
             self.topic_callback,
-            10
+            1
         )
 
         self.pub_annotated_image_ = self.create_publisher(
@@ -46,11 +46,12 @@ class InferenceNode(Node):
           "cmd_vel",
           10,
         )
+        print("Running inference node!")
 
     def topic_callback(self, message):
         """Subscribe to topic and publish annotated image."""
 
-        img = cv_bridge.imgmsg_to_cv2(message, "bgr8")
+        img = cv_bridge.compressed_imgmsg_to_cv2(message, "bgr8")
         results = self.model(img)[0]
 
         for result in results.boxes.data.tolist():

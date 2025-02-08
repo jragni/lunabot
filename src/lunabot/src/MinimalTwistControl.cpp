@@ -51,16 +51,16 @@ class MinimalTwistNode : public rclcpp::Node {
         int y_high_limit = msg->frame_height / 2;
 
         RCLCPP_INFO(this->get_logger(), "low: %d, high: %d goal: %d", y_low_limit, y_high_limit, image_y_center);
-        // if (image_y_center < y_high_limit) {
-        //   twist.linear.x = 0.2;
-        // } else {
-        //   twist.linear.x = 0.0;
-        // }
+        if (image_y_center < y_high_limit) {
+          twist.linear.x = 0.2;
+        } else {
+          twist.linear.x = 0.0;
+        }
 
         if (image_x_center < x_low_limit) {
-          twist.angular.z = 0.18;
+          twist.angular.z = -0.25;
         } else if (image_x_center > x_high_limit) {
-          twist.angular.z = -0.18;
+          twist.angular.z = 0.25;
         } else {
           twist.angular.z = 0.0;
         }
