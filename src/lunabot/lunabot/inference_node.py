@@ -80,7 +80,7 @@ class InferenceNode(Node):
               (target_x1, target_y1),
               (target_x2, target_y2),
               (0, 0, 255),
-              4,
+              2,
             )
 
             print(f'ID: {class_id}, name: {results.names[int(class_id)]}')
@@ -91,7 +91,7 @@ class InferenceNode(Node):
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1.3,
                 (0, 255, 0),
-                3,
+                1,
                 cv2.LINE_AA
             )
 
@@ -101,16 +101,22 @@ class InferenceNode(Node):
             pub_annotated_msg_.header.frame_id = "annotated_image"
             self.pub_annotated_image_.publish(pub_annotated_msg_)
 
-            pub_msg_ = InferenceResult()
-            pub_msg_.x1 = int(x1)
-            pub_msg_.y1 = int(y1)
-            pub_msg_.x2 = int(x2)
-            pub_msg_.y2 = int(y2)
-            pub_msg_.confidence = score
-            pub_msg_.class_id = int(class_id)
-            pub_msg_.frame_height = height
-            pub_msg_.frame_width = width
-            self.pub_.publish(pub_msg_)
+            if int(class_id) in [15, 16, 21]:
+                pub_msg_ = InferenceResult()
+                pub_msg_.x1 = int(x1)
+                pub_msg_.y1 = int(y1)
+                pub_msg_.x2 = int(x2)
+                pub_msg_.y2 = int(y2)
+                pub_msg_.confidence = score
+                pub_msg_.class_id = int(class_id)
+                pub_msg_.frame_height = height
+                pub_msg_.frame_width = width
+                self.pub_.publish(pub_msg_)
+            else:
+                vel_pub_msg_ = Twist()
+                vel_pub_msg_.linear.x = 0.0
+                vel_pub_msg_.angular.z = 0.0
+                self.vel_pub_.publish(vel_pub_msg_)
 
     def calculate_target(self, img):
         """Calculate target points
