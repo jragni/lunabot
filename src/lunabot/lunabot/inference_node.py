@@ -16,7 +16,6 @@ cv_bridge = CvBridge()
 
 
 class InferenceNode(Node):
-
     """Subscribe to raw image and publish coordinates of detected objects."""
 
     def __init__(self):
@@ -57,6 +56,15 @@ class InferenceNode(Node):
         for result in results.boxes.data.tolist():
             x1, y1, x2, y2, score, class_id = result
 
+            (
+                target_x1,
+                target_y1,
+                target_x2,
+                target_y2,
+                width,
+                height
+            ) = self.calculate_target(img)
+
             # Add bounding box of detected objects
             cv2.rectangle(
                 img,
@@ -65,12 +73,6 @@ class InferenceNode(Node):
                 (0, 255, 0),
                 3
             )
-            height, width, _ = img.shape
-
-            target_x1 = width // 2 - width // 8
-            target_x2 = (width // 2) + width // 8
-            target_y1 = height // 2
-            target_y2 = height
 
             # Add target area
             cv2.rectangle(
@@ -99,26 +101,35 @@ class InferenceNode(Node):
             pub_annotated_msg_.header.frame_id = "annotated_image"
             self.pub_annotated_image_.publish(pub_annotated_msg_)
 
-            # Publish inference result only for bear, cat, or dog
-            if int(class_id) in [15, 16, 21]:
-                pub_msg_ = InferenceResult()
-                pub_msg_.x1 = int(x1)
-                pub_msg_.y1 = int(y1)
-                pub_msg_.x2 = int(x2)
-                pub_msg_.y2 = int(y2)
-                pub_msg_.confidence = score
-                pub_msg_.class_id = int(class_id)
-                pub_msg_.frame_height = height
-                pub_msg_.frame_width = width
-                self.pub_.publish(pub_msg_)
-            else:
-                vel_pub_msg_ = Twist()
-                vel_pub_msg_.linear.x = 0.0
-                vel_pub_msg_.angular.z = 0.0
-                self.vel_pub_.publish(vel_pub_msg_)
+            pub_msg_ = InferenceResult()
+            pub_msg_.x1 = int(x1)
+            pub_msg_.y1 = int(y1)
+            pub_msg_.x2 = int(x2)
+            pub_msg_.y2 = int(y2)
+            pub_msg_.confidence = score
+            pub_msg_.class_id = int(class_id)
+            pub_msg_.frame_height = height
+            pub_msg_.frame_width = width
+            self.pub_.publish(pub_msg_)
+
+    def calculate_target(self, img):
+        """Calculate target points
+
+        Args:
+            img (MatLike): the cv2 image
+        """
+        height, width, _ = img.shape
+
+        target_x1 = width // 2 - width // 8
+        target_x2 = (width // 2) + width // 8
+        target_y1 = height // 2 - height // 4
+        target_y2 = height
+
+        return (target_x1, target_y1, target_x2, target_y2, width, height)
 
 
 if __name__ == "__main__":
+
     rclpy.init(args=None)
     inference_node = InferenceNode()
     rclpy.spin(inference_node)

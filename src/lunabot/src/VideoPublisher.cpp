@@ -8,6 +8,9 @@
 
 #include "sensor_msgs/msg/image.hpp"
 
+/**
+ * Node that publishes images from the robot i
+ */
 class VideoPublisher : public rclcpp::Node {
   public:
     VideoPublisher() : Node("camera_node") {
@@ -18,6 +21,13 @@ class VideoPublisher : public rclcpp::Node {
       }
     }
 
+    /**
+     * Initializes the image transport and publisher node.
+     *
+     * This is done in a separate method from the constructor
+     * since the Node needs to be constructed prior to the
+     * image transport being defined.
+    */
     void initialize() {
       image_transport_ = std::make_shared<image_transport::ImageTransport>(shared_from_this());
       publisher_ = image_transport_->advertise("camera/image", 1);
@@ -28,7 +38,7 @@ class VideoPublisher : public rclcpp::Node {
     }
 
   private:
-    size_t count_=0;
+    size_t count_ = 0;
     rclcpp::TimerBase::SharedPtr timer_;
     std::shared_ptr<image_transport::ImageTransport> image_transport_;
     image_transport::Publisher publisher_;
@@ -49,7 +59,6 @@ class VideoPublisher : public rclcpp::Node {
 
         msg->header.stamp = this->now();
         msg->header.frame_id = "raw_image";
-        // publisher_->publish(*msg);
         publisher_.publish(*msg);
         RCLCPP_INFO(this->get_logger(), "image publish count %zu", count_);
         this->count_++;
