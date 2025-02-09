@@ -41,15 +41,17 @@ class MinimalTwistNode : public rclcpp::Node {
         // || msg->class_id == 0
       ) {
         int image_x_center = (msg->x1 + msg->x2) / 2;
-        int image_y_center = (msg->y1 + msg->y2) / 2;
 
         // calculate limits
         int x_low_limit = msg->frame_width / 2 - msg->frame_width / 8;
         int x_high_limit = msg->frame_width / 2 + msg->frame_width / 8;
-        int y_high_limit = msg->frame_height / 2;
+        int top_limit = msg->frame_height - msg->frame_height / 4;
+        int bottom_limit = msg->frame_height - msg->frame_height / 8;
 
-        if (image_y_center < y_high_limit) {
-          twist.linear.x = 0.2;
+        if (msg->y2 < top_limit) {
+          twist.linear.x = 0.3;
+        } else if (msg->y2 > bottom_limit) {
+          twist.linear.x = -0.3;
         } else {
           twist.linear.x = 0.0;
         }
@@ -61,15 +63,14 @@ class MinimalTwistNode : public rclcpp::Node {
         } else {
           twist.angular.z = 0.0;
         }
-        RCLCPP_INFO(this->get_logger(), "linear: %f, angular %f", twist.linear.x, twist.angular.z);
-      } else {
-        twist.linear.x = 0.0;
-        twist.angular.z = 0.0;
       }
+      RCLCPP_INFO( this->get_logger(), "linear: %f, angular %f", twist.linear.x, twist.angular.z);
 
       publisher_->publish(twist);
+      rclcpp::sleep_for(std::chrono::milliseconds(100));
     }
 };
+
 
 int main(int argc, char** argv) {
   rclcpp::init(argc, argv);

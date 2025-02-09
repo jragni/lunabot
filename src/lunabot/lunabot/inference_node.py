@@ -53,17 +53,43 @@ class InferenceNode(Node):
         img = cv_bridge.compressed_imgmsg_to_cv2(message, "bgr8")
         results = self.model(img)[0]
 
+        (
+            target_x1,
+            target_y1,
+            target_x2,
+            target_y2,
+            width,
+            height
+        ) = self.calculate_target_box(img)
+
+        vel_pub_msg_ = Twist()
+
+        if not results.boxes.data.tolist():
+            print('No objects found... sharing image anyways')
+            fallback_image_message = cv_bridge.cv2_to_imgmsg(
+                img,
+                'bgr8',
+                Header()
+            )
+            fallback_image_message.header.stamp = self.get_clock().now().to_msg()
+            fallback_image_message.header.frame_id = "annotated_image"
+
+            self.pub_annotated_image_.publish(fallback_image_message)
+            vel_pub_msg_.linear.x = 0.0
+            vel_pub_msg_.linear.z = 0.0
+            self.vel_pub_.publish(vel_pub_msg_)
+
         for result in results.boxes.data.tolist():
             x1, y1, x2, y2, score, class_id = result
 
-            (
-                target_x1,
-                target_y1,
-                target_x2,
-                target_y2,
-                width,
-                height
-            ) = self.calculate_target(img)
+            # Add target area
+            cv2.rectangle(
+                img,
+                (target_x1, target_y1),
+                (target_x2, target_y2),
+                (0, 0, 255),
+                1,
+            )
 
             # Add bounding box of detected objects
             cv2.rectangle(
@@ -71,22 +97,13 @@ class InferenceNode(Node):
                 (int(x1), int(y1)),
                 (int(x2), int(y2)),
                 (0, 255, 0),
-                3
-            )
-
-            # Add target area
-            cv2.rectangle(
-              img,
-              (target_x1, target_y1),
-              (target_x2, target_y2),
-              (0, 0, 255),
-              2,
+                2
             )
 
             print(f'ID: {class_id}, name: {results.names[int(class_id)]}')
             cv2.putText(
                 img,
-                results.names[int(class_id)].upper() + f"Certainity: {score}",
+                results.names[int(class_id)].upper() + f": {score}",
                 (int(x1), int(y1-10)),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1.3,
@@ -94,13 +111,6 @@ class InferenceNode(Node):
                 1,
                 cv2.LINE_AA
             )
-
-            # Publish annotated image
-            pub_annotated_msg_ = cv_bridge.cv2_to_imgmsg(img, "bgr8", Header())
-            pub_annotated_msg_.header.stamp = self.get_clock().now().to_msg()
-            pub_annotated_msg_.header.frame_id = "annotated_image"
-            self.pub_annotated_image_.publish(pub_annotated_msg_)
-
             if int(class_id) in [15, 16, 21]:
                 pub_msg_ = InferenceResult()
                 pub_msg_.x1 = int(x1)
@@ -112,13 +122,14 @@ class InferenceNode(Node):
                 pub_msg_.frame_height = height
                 pub_msg_.frame_width = width
                 self.pub_.publish(pub_msg_)
-            else:
-                vel_pub_msg_ = Twist()
-                vel_pub_msg_.linear.x = 0.0
-                vel_pub_msg_.angular.z = 0.0
-                self.vel_pub_.publish(vel_pub_msg_)
 
-    def calculate_target(self, img):
+            # Publish annotated image
+            pub_annotated_msg_ = cv_bridge.cv2_to_imgmsg(img, "bgr8", Header())
+            pub_annotated_msg_.header.stamp = self.get_clock().now().to_msg()
+            pub_annotated_msg_.header.frame_id = "annotated_image"
+            self.pub_annotated_image_.publish(pub_annotated_msg_)
+
+    def calculate_target_box(self, img):
         """Calculate target points
 
         Args:
@@ -128,8 +139,8 @@ class InferenceNode(Node):
 
         target_x1 = width // 2 - width // 8
         target_x2 = (width // 2) + width // 8
-        target_y1 = height // 2 - height // 4
-        target_y2 = height
+        target_y1 = height - height // 4
+        target_y2 = height - height // 8
 
         return (target_x1, target_y1, target_x2, target_y2, width, height)
 
