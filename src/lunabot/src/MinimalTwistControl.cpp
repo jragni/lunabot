@@ -18,8 +18,8 @@ class MinimalTwistNode : public rclcpp::Node {
     }
     ~MinimalTwistNode (){
       auto stop_twist_msg = geometry_msgs::msg::Twist();
-      stop_twist_msg.angular.z = 0;
-      stop_twist_msg.linear.x = 0;
+      stop_twist_msg.angular.z = 0.0;
+      stop_twist_msg.linear.x = 0.0;
       this->publisher_->publish(stop_twist_msg);
     }
 
@@ -38,59 +38,39 @@ class MinimalTwistNode : public rclcpp::Node {
         msg->class_id == 15
         || msg->class_id == 16
         || msg->class_id == 21
+        // || msg->class_id == 0
       ) {
-
         int image_x_center = (msg->x1 + msg->x2) / 2;
-        int image_y_center = (msg->y1 + msg->y2) / 2;
 
         // calculate limits
-        auto [
-          x_low_limit,
-          x_high_limit,
-          y_low_limit,
-          y_high_limit
-        ] = calculate_limits(int(msg->frame_height), int(msg->frame_width));
+        int x_low_limit = msg->frame_width / 2 - msg->frame_width / 8;
+        int x_high_limit = msg->frame_width / 2 + msg->frame_width / 8;
+        int top_limit = msg->frame_height - msg->frame_height / 4;
+        int bottom_limit = msg->frame_height - msg->frame_height / 8;
 
-
-        if (image_y_center < y_high_limit) {
-          twist.linear.x = 0.2;
+        if (msg->y2 < top_limit) {
+          twist.linear.x = 0.3;
+        } else if (msg->y2 > bottom_limit) {
+          twist.linear.x = -0.3;
         } else {
           twist.linear.x = 0.0;
         }
 
         if (image_x_center < x_low_limit) {
-          twist.angular.z = -0.25;
+          twist.angular.z = -0.3;
         } else if (image_x_center > x_high_limit) {
-          twist.angular.z = 0.25;
+          twist.angular.z = 0.3;
         } else {
           twist.angular.z = 0.0;
         }
-        RCLCPP_INFO(this->get_logger(), "linear: %f, angular %f", twist.linear.x, twist.angular.z);
-
-      } else {
-        twist.linear.x = 0.0;
-        twist.angular.z = 0.0;
-        RCLCPP_INFO(this->get_logger(), "Rejected -- %ld", msg->class_id);
       }
+      RCLCPP_INFO( this->get_logger(), "linear: %f, angular %f", twist.linear.x, twist.angular.z);
 
       publisher_->publish(twist);
-    }
-
-    /**
-     * Calculate the "hit box" limits. If the object is not within these limits,
-     * The robot shall turn towards it.
-     */
-    std::array<int, 4> calculate_limits(int height, int width) {
-      std::array<int, 4> limits;
-
-      limits[0] = width / 2 - width / 8; // left limit
-      limits[1] = width / 2 + width / 8; // right limit
-      limits[2] = height; // bottom
-      limits[3] = height / 2 - height / 4; // top
-
-      return limits;
+      rclcpp::sleep_for(std::chrono::milliseconds(100));
     }
 };
+
 
 int main(int argc, char** argv) {
   rclcpp::init(argc, argv);
